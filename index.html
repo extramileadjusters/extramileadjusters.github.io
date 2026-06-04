@@ -5,1073 +5,1076 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Extra Mile Adjusters — Platform Overview</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=IBM+Plex+Mono:wght@300;400;500&family=Söhne:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,700&family=IBM+Plex+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
---cream: #f5f1ea;
---cream-dark: #ede8df;
---cream-mid: #e8e2d8;
---ink: #0d0f14;
---ink-mid: #1e2330;
---ink-light: #2e3448;
---navy: #0f1729;
---navy-mid: #162040;
---gold: #c9a84c;
---gold-light: #e0bc6e;
---gold-dim: rgba(201,168,76,0.12);
---gold-border: rgba(201,168,76,0.3);
---muted: #7a7060;
---muted-light: #a09880;
---border: rgba(13,15,20,0.1);
---border-strong: rgba(13,15,20,0.18);
---red-accent: #8b2a2a;
---radius: 2px;
+  --cream: #f5f1ea;
+  --cream-dark: #ede8df;
+  --cream-mid: #e8e2d8;
+  --ink: #0d0f14;
+  --ink-mid: #1e2330;
+  --ink-light: #2e3448;
+  --navy: #0f1729;
+  --navy-mid: #162040;
+  --gold: #c9a84c;
+  --gold-light: #e0bc6e;
+  --gold-dim: rgba(201,168,76,0.12);
+  --gold-border: rgba(201,168,76,0.3);
+  --muted: #7a7060;
+  --muted-light: #a09880;
+  --border: rgba(13,15,20,0.1);
+  --border-strong: rgba(13,15,20,0.18);
+  --radius: 2px;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-background: var(--cream);
-color: var(--ink);
-font-family: 'DM Sans', sans-serif;
-font-size: 15px;
-line-height: 1.6;
-overflow-x: hidden;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* ─── NOISE TEXTURE OVERLAY ─── */
 body::before {
-content: '';
-position: fixed; inset: 0;
-background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-pointer-events: none;
-z-index: 1000;
-opacity: 0.5;
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.5;
 }
 
 /* ─── HEADER ─── */
 .site-header {
-position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-background: var(--cream);
-border-bottom: 1px solid var(--border-strong);
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: var(--cream);
+  border-bottom: 1px solid var(--border-strong);
 }
 
 .header-top {
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 0 3rem;
-height: 56px;
-border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  height: 56px;
+  border-bottom: 1px solid var(--border);
 }
 
 .logo {
-font-family: 'Playfair Display', serif;
-font-size: 1.05rem;
-font-weight: 700;
-letter-spacing: 0.01em;
-color: var(--ink);
-text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  text-decoration: none;
 }
 .logo span { color: var(--gold); }
 
 .header-meta {
-display: flex;
-align-items: center;
-gap: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 .header-meta a {
-font-size: 0.75rem;
-font-weight: 500;
-letter-spacing: 0.08em;
-text-transform: uppercase;
-color: var(--muted);
-text-decoration: none;
-transition: color 0.2s;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
 }
 .header-meta a:hover { color: var(--ink); }
 
 .header-cta {
-background: var(--ink) !important;
-color: var(--cream) !important;
-padding: 0.45rem 1.2rem;
-font-size: 0.72rem !important;
-letter-spacing: 0.1em !important;
-text-transform: uppercase !important;
+  background: var(--ink) !important;
+  color: var(--cream) !important;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
 }
 
-/* Carrier ticker */
+/* ─── TICKER ─── */
 .ticker-bar {
-background: var(--ink);
-overflow: hidden;
-height: 32px;
-display: flex;
-align-items: center;
+  background: var(--ink);
+  overflow: hidden;
+  height: 32px;
+  display: flex;
+  align-items: center;
 }
 .ticker-label {
-flex-shrink: 0;
-padding: 0 1.5rem;
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.62rem;
-letter-spacing: 0.14em;
-text-transform: uppercase;
-color: var(--gold);
-border-right: 1px solid #2a2a3a;
-height: 100%;
-display: flex;
-align-items: center;
-white-space: nowrap;
+  flex-shrink: 0;
+  padding: 0 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-right: 1px solid #2a2a3a;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
 }
 .ticker-scroll {
-flex: 1;
-overflow: hidden;
-position: relative;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
 }
 .ticker-scroll::before,
 .ticker-scroll::after {
-content: '';
-position: absolute; top: 0; bottom: 0;
-width: 60px; z-index: 2; pointer-events: none;
+  content: '';
+  position: absolute; top: 0; bottom: 0;
+  width: 60px; z-index: 2; pointer-events: none;
 }
 .ticker-scroll::before { left: 0; background: linear-gradient(90deg, var(--ink), transparent); }
-.ticker-scroll::after { right: 0; background: linear-gradient(-90deg, var(--ink), transparent); }
+.ticker-scroll::after  { right: 0; background: linear-gradient(-90deg, var(--ink), transparent); }
+
 .ticker-track {
-display: flex;
-white-space: nowrap;
-animation: tickerScroll 40s linear infinite;
+  display: flex;
+  white-space: nowrap;
+  /* duration set dynamically in JS */
+  animation: tickerScroll 60s linear infinite;
 }
 .ticker-item {
-display: inline-flex;
-align-items: center;
-gap: 0.5rem;
-padding: 0 1.8rem;
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.62rem;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-color: #666888;
-border-right: 1px solid #1e1e2e;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1.8rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #666888;
+  border-right: 1px solid #1e1e2e;
 }
 .ticker-item .dot {
-width: 4px; height: 4px;
-border-radius: 50%;
-background: var(--gold);
-opacity: 0.4;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.4;
 }
 .ticker-item.active { color: #aab0cc; }
 .ticker-item.active .dot { opacity: 1; }
 
 @keyframes tickerScroll {
-0% { transform: translateX(0); }
-100% { transform: translateX(-50%); }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* ─── HERO ─── */
 .hero {
-padding: 10rem 3rem 6rem;
-max-width: 1280px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: 1fr 420px;
-gap: 5rem;
-align-items: start;
+  padding: 10rem 3rem 6rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 5rem;
+  align-items: start;
 }
 
 .hero-eyebrow {
-display: flex;
-align-items: center;
-gap: 1rem;
-margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
-.eyebrow-line {
-width: 40px; height: 1px;
-background: var(--gold);
-}
+.eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
 .eyebrow-text {
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.62rem;
-letter-spacing: 0.2em;
-text-transform: uppercase;
-color: var(--gold);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
 }
 
 .hero-headline {
-font-family: 'Playfair Display', serif;
-font-size: clamp(3rem, 5.5vw, 5.2rem);
-font-weight: 700;
-line-height: 1.0;
-letter-spacing: -0.01em;
-color: var(--ink);
-margin-bottom: 1.75rem;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 5.5vw, 5.2rem);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 1.75rem;
 }
-.hero-headline em {
-font-style: italic;
-color: var(--gold);
-}
-.hero-headline .ruled {
-display: inline-block;
-border-bottom: 3px solid var(--ink);
-padding-bottom: 2px;
-}
+.hero-headline em { font-style: italic; color: var(--gold); }
 
 .hero-sub {
-font-size: 1.0rem;
-color: var(--muted);
-max-width: 520px;
-line-height: 1.75;
-margin-bottom: 2.5rem;
-font-weight: 300;
+  font-size: 1.0rem;
+  color: var(--muted);
+  max-width: 520px;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
 }
 
 .hero-actions {
-display: flex;
-gap: 1rem;
-align-items: center;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 .btn-ink {
-background: var(--ink);
-color: var(--cream);
-font-size: 0.78rem;
-font-weight: 600;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-padding: 0.9rem 2rem;
-text-decoration: none;
-display: inline-block;
-transition: background 0.2s;
+  background: var(--ink);
+  color: var(--cream);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s;
 }
 .btn-ink:hover { background: var(--ink-light); }
 .btn-ghost {
-font-size: 0.78rem;
-font-weight: 500;
-letter-spacing: 0.06em;
-text-transform: uppercase;
-color: var(--muted);
-text-decoration: none;
-border-bottom: 1px solid var(--muted-light);
-padding-bottom: 2px;
-transition: color 0.2s;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--muted-light);
+  padding-bottom: 2px;
+  transition: color 0.2s;
 }
 .btn-ghost:hover { color: var(--ink); }
 
 /* Hero right panel */
 .hero-panel {
-background: var(--ink);
-padding: 2.5rem;
-color: var(--cream);
-position: sticky;
-top: 100px;
+  background: var(--ink);
+  padding: 2.5rem;
+  color: var(--cream);
+  position: sticky;
+  top: 100px;
 }
 
 .panel-tag {
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.6rem;
-letter-spacing: 0.18em;
-text-transform: uppercase;
-color: var(--gold);
-margin-bottom: 1.5rem;
-display: flex;
-align-items: center;
-gap: 0.75rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 .panel-tag::after {
-content: '';
-flex: 1;
-height: 1px;
-background: rgba(201,168,76,0.2);
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(201,168,76,0.2);
 }
 
 .kpi-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 1px;
-background: rgba(255,255,255,0.06);
-margin-bottom: 1px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  margin-bottom: 1px;
 }
 .kpi-cell {
-background: var(--ink);
-padding: 1.4rem 1.2rem;
-transition: background 0.2s;
+  background: var(--ink);
+  padding: 1.4rem 1.2rem;
+  transition: background 0.2s;
 }
 .kpi-cell:hover { background: var(--ink-light); }
 .kpi-val {
-font-family: 'Playfair Display', serif;
-font-size: 2.0rem;
-font-weight: 700;
-color: var(--cream);
-line-height: 1;
-margin-bottom: 0.3rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.0rem;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1;
+  margin-bottom: 0.3rem;
 }
 .kpi-val span { color: var(--gold); font-size: 1.1rem; }
 .kpi-label {
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.58rem;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-color: #7a7e99;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7a7e99;
 }
 .kpi-delta {
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.62rem;
-color: #4a9e6a;
-margin-top: 0.25rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem;
+  color: #4a9e6a;
+  margin-top: 0.25rem;
 }
 
 .panel-divider {
-height: 1px;
-background: rgba(255,255,255,0.06);
-margin: 1.5rem 0;
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin: 1.5rem 0;
 }
 
 .panel-summary {
-font-size: 0.82rem;
-color: #888aaa;
-line-height: 1.7;
-margin-bottom: 1.5rem;
+  font-size: 0.82rem;
+  color: #888aaa;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
 .panel-cta {
-display: block;
-background: var(--gold);
-color: var(--ink);
-text-align: center;
-padding: 0.9rem;
-font-size: 0.75rem;
-font-weight: 700;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-text-decoration: none;
-transition: background 0.2s;
+  display: block;
+  background: var(--gold);
+  color: var(--ink);
+  text-align: center;
+  padding: 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s;
 }
 .panel-cta:hover { background: var(--gold-light); }
 
 /* ─── SECTION FRAMEWORK ─── */
 .section-wrap {
-border-top: 1px solid var(--border-strong);
-padding: 5rem 3rem;
+  border-top: 1px solid var(--border-strong);
+  padding: 5rem 3rem;
 }
 .section-wrap.dark {
-background: var(--ink);
-color: var(--cream);
-border-top: none;
+  background: var(--ink);
+  color: var(--cream);
+  border-top: none;
 }
 .section-wrap.navy {
-background: var(--navy);
-color: var(--cream);
-border-top: none;
+  background: var(--navy);
+  color: var(--cream);
+  border-top: none;
 }
 .section-wrap.tinted {
-background: var(--cream-dark);
+  background: var(--cream-dark);
 }
 
 .section-inner { max-width: 1280px; margin: 0 auto; }
 
 .section-header {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 4rem;
-margin-bottom: 4rem;
-align-items: end;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  align-items: end;
 }
 .section-header.center {
-grid-template-columns: 1fr;
-text-align: center;
-max-width: 680px;
-margin: 0 auto 4rem;
+  grid-template-columns: 1fr;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 4rem;
 }
+.section-header.center .section-label {
+  justify-content: center;
+}
+.section-header.center .section-label::before { display: none; }
 
 .section-label {
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.6rem;
-letter-spacing: 0.22em;
-text-transform: uppercase;
-color: var(--gold);
-margin-bottom: 1rem;
-display: flex;
-align-items: center;
-gap: 0.75rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 .section-label::before {
-content: '';
-width: 24px; height: 1px;
-background: var(--gold);
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--gold);
 }
 .dark .section-label,
 .navy .section-label { color: var(--gold); }
 
 h2 {
-font-family: 'Playfair Display', serif;
-font-size: clamp(2rem, 3.5vw, 3.0rem);
-font-weight: 700;
-line-height: 1.05;
-letter-spacing: -0.01em;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3.0rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
 }
 h2 em { font-style: italic; color: var(--gold); }
 .dark h2, .navy h2 { color: var(--cream); }
 
 .section-desc {
-font-size: 0.95rem;
-color: var(--muted);
-line-height: 1.75;
-font-weight: 300;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.75;
+  font-weight: 300;
 }
 .dark .section-desc { color: #888aaa; }
 
-/* ─── THESIS / VALUE PROP ─── */
+/* ─── THESIS GRID ─── */
 .thesis-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 1px;
-background: var(--border-strong);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-strong);
 }
 .thesis-card {
-background: var(--cream);
-padding: 2.5rem 2rem;
-transition: background 0.2s;
+  background: var(--cream);
+  padding: 2.5rem 2rem;
+  transition: background 0.2s;
 }
 .thesis-card:hover { background: var(--cream-dark); }
 .thesis-num {
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.6rem;
-letter-spacing: 0.2em;
-color: var(--gold);
-margin-bottom: 1.25rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
 }
 .thesis-card h3 {
-font-family: 'Playfair Display', serif;
-font-size: 1.35rem;
-font-weight: 600;
-margin-bottom: 0.75rem;
-line-height: 1.2;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
 }
 .thesis-card p {
-font-size: 0.88rem;
-color: var(--muted);
-line-height: 1.7;
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
-/* ─── MARKET OPPORTUNITY ─── */
+/* ─── MARKET ─── */
 .market-layout {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 5rem;
-align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
 }
 
 .market-stats {
-display: flex;
-flex-direction: column;
-gap: 1px;
-background: rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: rgba(255,255,255,0.05);
 }
 .market-stat {
-background: var(--navy);
-padding: 1.75rem 2rem;
-display: flex;
-align-items: center;
-justify-content: space-between;
-transition: background 0.2s;
+  background: var(--navy);
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.2s;
 }
 .market-stat:hover { background: var(--navy-mid); }
 .market-stat-label {
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.62rem;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-color: #7a7e99;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7a7e99;
 }
 .market-stat-val {
-font-family: 'Playfair Display', serif;
-font-size: 1.8rem;
-font-weight: 700;
-color: var(--cream);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--cream);
 }
 .market-stat-val em { color: var(--gold); font-style: normal; font-size: 1.1rem; }
 
 .market-text h3 {
-font-family: 'Playfair Display', serif;
-font-size: 1.6rem;
-font-weight: 600;
-color: var(--cream);
-margin-bottom: 1rem;
-line-height: 1.2;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 .market-text p {
-font-size: 0.9rem;
-color: #888aaa;
-line-height: 1.75;
-margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #888aaa;
+  line-height: 1.75;
+  margin-bottom: 1rem;
 }
 
 .insight-list {
-list-style: none;
-display: flex;
-flex-direction: column;
-gap: 0.75rem;
-margin-top: 1.5rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
 }
 .insight-list li {
-display: flex;
-align-items: flex-start;
-gap: 0.85rem;
-font-size: 0.85rem;
-color: #aab0cc;
-line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  font-size: 0.85rem;
+  color: #aab0cc;
+  line-height: 1.5;
 }
 .insight-list li::before {
-content: '→';
-color: var(--gold);
-flex-shrink: 0;
-margin-top: 0.05rem;
+  content: '→';
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 0.05rem;
 }
 
-/* ─── REVENUE CHART ─── */
+/* ─── CHART ─── */
 .chart-section {
-padding: 4rem 3rem;
-background: var(--ink);
-border-top: 1px solid rgba(255,255,255,0.04);
+  padding: 4rem 3rem;
+  background: var(--ink);
+  border-top: 1px solid rgba(255,255,255,0.04);
 }
-.chart-wrap {
-max-width: 1280px;
-margin: 0 auto;
-}
+.chart-wrap { max-width: 1280px; margin: 0 auto; }
 .chart-header {
-display: flex;
-justify-content: space-between;
-align-items: flex-end;
-margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
 }
 .chart-title {
-font-family: 'Playfair Display', serif;
-font-size: 1.6rem;
-font-weight: 600;
-color: var(--cream);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--cream);
 }
 .chart-legend {
-display: flex;
-gap: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
 }
 .legend-item {
-display: flex;
-align-items: center;
-gap: 0.5rem;
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.6rem;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-color: #666888;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #666888;
 }
 .legend-dot {
-width: 8px; height: 8px;
-border-radius: 50%;
+  width: 8px; height: 8px;
+  border-radius: 50%;
 }
 
-.chart-area {
-position: relative;
-height: 220px;
-display: flex;
-align-items: flex-end;
-gap: 2px;
+/* Chart container: fixed height for bars + room for labels below */
+.chart-container {
+  position: relative;
+  padding-bottom: 28px; /* space for x-axis labels */
 }
+.chart-area {
+  position: relative;
+  height: 220px;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+/* Grid lines sit behind bars */
+.chart-grid {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 0;
+}
+.chart-grid-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.04);
+}
+
 .chart-bar-group {
-flex: 1;
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 6px;
-height: 100%;
-justify-content: flex-end;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 1;
 }
 .chart-bar {
-width: 100%;
-border-radius: 1px 1px 0 0;
-position: relative;
-transition: opacity 0.2s;
-cursor: pointer;
+  width: 100%;
+  border-radius: 1px 1px 0 0;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  transition: opacity 0.2s;
+  cursor: pointer;
 }
 .chart-bar:hover { opacity: 0.8; }
-.chart-bar.actual { background: var(--gold); }
+.chart-bar.actual    { background: var(--gold); }
 .chart-bar.projected { background: rgba(201,168,76,0.25); border: 1px solid rgba(201,168,76,0.4); border-bottom: none; }
+
 .chart-bar-label {
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.58rem;
-letter-spacing: 0.08em;
-color: #555770;
-text-align: center;
-margin-top: 8px;
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.06em;
+  color: #555770;
+  white-space: nowrap;
 }
 .chart-bar-val {
-position: absolute;
-top: -20px;
-left: 50%;
-transform: translateX(-50%);
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.58rem;
-color: var(--gold);
-white-space: nowrap;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  color: var(--gold);
+  white-space: nowrap;
 }
 .chart-bar.projected .chart-bar-val { color: rgba(201,168,76,0.5); }
 
-.chart-grid {
-position: absolute;
-inset: 0;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-pointer-events: none;
-}
-.chart-grid-line {
-width: 100%;
-height: 1px;
-background: rgba(255,255,255,0.04);
+/* Bar grow animation — applied per element via JS */
+@keyframes barGrow {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
 }
 
-/* ─── OPERATIONS / HOW IT WORKS ─── */
+/* ─── OPERATIONS ─── */
 .ops-layout {
-display: grid;
-grid-template-columns: 300px 1fr;
-gap: 5rem;
-align-items: start;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 5rem;
+  align-items: start;
 }
 
 .ops-steps {
-display: flex;
-flex-direction: column;
-gap: 0;
+  display: flex;
+  flex-direction: column;
 }
 .ops-step {
-border-left: 1px solid var(--border-strong);
-padding: 0 0 2.5rem 2rem;
-position: relative;
-cursor: pointer;
+  border-left: 1px solid var(--border-strong);
+  padding: 0 0 2.5rem 2rem;
+  position: relative;
+  cursor: pointer;
 }
 .ops-step::before {
-content: '';
-position: absolute;
-left: -5px;
-top: 4px;
-width: 9px; height: 9px;
-border-radius: 50%;
-background: var(--cream-dark);
-border: 2px solid var(--border-strong);
-transition: background 0.2s, border-color 0.2s;
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 4px;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--cream-dark);
+  border: 2px solid var(--border-strong);
+  transition: background 0.2s, border-color 0.2s;
 }
 .ops-step.active::before {
-background: var(--gold);
-border-color: var(--gold);
+  background: var(--gold);
+  border-color: var(--gold);
 }
 .ops-step:last-child { padding-bottom: 0; }
 .ops-step-num {
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.58rem;
-letter-spacing: 0.15em;
-text-transform: uppercase;
-color: var(--muted-light);
-margin-bottom: 0.4rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted-light);
+  margin-bottom: 0.4rem;
 }
 .ops-step h3 {
-font-family: 'Playfair Display', serif;
-font-size: 1.1rem;
-font-weight: 600;
-margin-bottom: 0.4rem;
-transition: color 0.2s;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  transition: color 0.2s;
 }
 .ops-step.active h3 { color: var(--gold); }
 .ops-step p {
-font-size: 0.83rem;
-color: var(--muted);
-line-height: 1.6;
+  font-size: 0.83rem;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .ops-visual {
-background: var(--ink);
-padding: 3rem;
-min-height: 360px;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
+  background: var(--ink);
+  padding: 3rem;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .ops-visual-tag {
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.6rem;
-letter-spacing: 0.18em;
-text-transform: uppercase;
-color: var(--gold);
-margin-bottom: 2rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 2rem;
 }
 .ops-metrics {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 1px;
-background: rgba(255,255,255,0.05);
-margin-top: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.05);
+  margin-top: auto;
 }
-.ops-metric {
-background: var(--ink);
-padding: 1.25rem;
-}
+.ops-metric { background: var(--ink); padding: 1.25rem; }
 .ops-metric-val {
-font-family: 'Playfair Display', serif;
-font-size: 1.6rem;
-color: var(--cream);
-font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--cream);
+  font-weight: 700;
 }
 .ops-metric-val em { color: var(--gold); font-style: normal; }
 .ops-metric-label {
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.56rem;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-color: #555770;
-margin-top: 0.25rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555770;
+  margin-top: 0.25rem;
 }
 
-/* ─── ACQUISITION THESIS ─── */
+/* ─── ACQUISITION BANNER ─── */
 .thesis-banner {
-background: var(--gold);
-padding: 3.5rem 3rem;
+  background: var(--gold);
+  padding: 3.5rem 3rem;
 }
 .thesis-banner-inner {
-max-width: 1280px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: 1fr auto;
-gap: 4rem;
-align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4rem;
+  align-items: center;
 }
 .thesis-banner h2 {
-font-family: 'Playfair Display', serif;
-font-size: clamp(1.8rem, 3vw, 2.8rem);
-font-weight: 700;
-color: var(--ink);
-line-height: 1.1;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.1;
 }
 .thesis-banner p {
-font-size: 0.95rem;
-color: rgba(13,15,20,0.65);
-margin-top: 0.75rem;
-max-width: 600px;
-line-height: 1.6;
+  font-size: 0.95rem;
+  color: rgba(13,15,20,0.65);
+  margin-top: 0.75rem;
+  max-width: 600px;
+  line-height: 1.6;
 }
 .thesis-banner-btn {
-background: var(--ink);
-color: var(--cream);
-padding: 1rem 2.5rem;
-font-size: 0.78rem;
-font-weight: 700;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-text-decoration: none;
-white-space: nowrap;
-display: inline-block;
-transition: background 0.2s;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 1rem 2.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-block;
+  transition: background 0.2s;
 }
 .thesis-banner-btn:hover { background: var(--ink-light); }
 
-/* ─── MOAT / COMPETITIVE ADVANTAGES ─── */
+/* ─── MOAT ─── */
 .moat-grid {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 1px;
-background: rgba(255,255,255,0.05);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.05);
 }
 .moat-card {
-background: var(--navy);
-padding: 2.5rem 2rem;
-transition: background 0.2s;
+  background: var(--navy);
+  padding: 2.5rem 2rem;
+  transition: background 0.2s;
 }
 .moat-card:hover { background: var(--navy-mid); }
-.moat-icon {
-font-size: 1.4rem;
-margin-bottom: 1rem;
-}
+.moat-icon { font-size: 1.4rem; margin-bottom: 1rem; }
 .moat-card h3 {
-font-family: 'Playfair Display', serif;
-font-size: 1.2rem;
-color: var(--cream);
-margin-bottom: 0.65rem;
-line-height: 1.2;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--cream);
+  margin-bottom: 0.65rem;
+  line-height: 1.2;
 }
 .moat-card p {
-font-size: 0.85rem;
-color: #888aaa;
-line-height: 1.65;
+  font-size: 0.85rem;
+  color: #888aaa;
+  line-height: 1.65;
 }
 .moat-tag {
-display: inline-block;
-margin-top: 1rem;
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.58rem;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-color: var(--gold);
-border: 1px solid var(--gold-border);
-padding: 0.25rem 0.6rem;
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold-border);
+  padding: 0.25rem 0.6rem;
 }
 
-/* ─── SIGN-UP FORMS ─── */
+/* ─── FORMS ─── */
 .forms-section {
-background: var(--cream-dark);
-border-top: 1px solid var(--border-strong);
-padding: 5rem 3rem;
+  background: var(--cream-dark);
+  border-top: 1px solid var(--border-strong);
+  padding: 5rem 3rem;
 }
-.forms-inner {
-max-width: 1280px;
-margin: 0 auto;
-}
+.forms-inner { max-width: 1280px; margin: 0 auto; }
 .forms-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 2rem;
-margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
 .form-card {
-background: var(--cream);
-border: 1px solid var(--border-strong);
-padding: 2.5rem;
+  background: var(--cream);
+  border: 1px solid var(--border-strong);
+  padding: 2.5rem;
 }
 .form-card-tag {
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.6rem;
-letter-spacing: 0.18em;
-text-transform: uppercase;
-color: var(--gold);
-margin-bottom: 1.25rem;
-display: flex;
-align-items: center;
-gap: 0.6rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 .form-card-tag::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
 
 .form-card h3 {
-font-family: 'Playfair Display', serif;
-font-size: 1.6rem;
-font-weight: 700;
-margin-bottom: 0.4rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
 }
 .form-card > p {
-font-size: 0.85rem;
-color: var(--muted);
-margin-bottom: 2rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
 }
 
 .offer-pill {
-display: inline-block;
-background: var(--ink);
-color: var(--cream);
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.62rem;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-padding: 0.35rem 0.9rem;
-margin-bottom: 1.5rem;
+  display: inline-block;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  margin-bottom: 1.5rem;
 }
 .offer-pill span { color: var(--gold); }
 
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
 .field { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 0.75rem; }
+
 label {
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.58rem;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-color: var(--muted);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 input, select, textarea {
-background: var(--cream-dark);
-border: 1px solid var(--border-strong);
-border-bottom: 1px solid var(--ink);
-color: var(--ink);
-padding: 0.65rem 0.85rem;
-font-family: 'DM Sans', sans-serif;
-font-size: 0.88rem;
-transition: border-color 0.2s, background 0.2s;
-width: 100%;
-appearance: none;
-border-radius: 0;
+  background: var(--cream-dark);
+  border: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink);
+  padding: 0.65rem 0.85rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  transition: border-color 0.2s, background 0.2s;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 input:focus, select:focus, textarea:focus {
-outline: none;
-border-color: var(--ink);
-background: var(--cream);
+  outline: none;
+  border-color: var(--ink);
+  background: var(--cream);
 }
 input::placeholder, textarea::placeholder { color: var(--muted-light); }
 select {
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23333' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-background-repeat: no-repeat;
-background-position: right 1rem center;
-padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23333' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-color: var(--cream-dark);
+  padding-right: 2.5rem;
 }
 select option { background: var(--cream); }
 textarea { resize: vertical; min-height: 80px; }
 
 .submit-btn {
-width: 100%;
-background: var(--ink);
-color: var(--cream);
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.72rem;
-font-weight: 500;
-letter-spacing: 0.14em;
-text-transform: uppercase;
-padding: 1rem;
-border: none;
-cursor: pointer;
-margin-top: 0.5rem;
-transition: background 0.2s;
+  width: 100%;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s, color 0.2s;
 }
 .submit-btn:hover { background: var(--gold); color: var(--ink); }
 .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .form-note {
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.58rem;
-letter-spacing: 0.06em;
-color: var(--muted-light);
-text-align: center;
-margin-top: 0.75rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  color: var(--muted-light);
+  text-align: center;
+  margin-top: 0.75rem;
 }
 
-/* Thank you */
 .thank-you-box {
-text-align: center;
-padding: 3rem 1.5rem;
+  text-align: center;
+  padding: 3rem 1.5rem;
 }
 .ty-icon { font-size: 2.5rem; margin-bottom: 1rem; }
 .thank-you-box h3 {
-font-family: 'Playfair Display', serif;
-font-size: 1.8rem;
-margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
 }
 .thank-you-box p { font-size: 0.88rem; color: var(--muted); margin-bottom: 0.4rem; }
 .ty-badge {
-margin-top: 1.5rem;
-padding: 1rem;
-background: var(--gold-dim);
-border: 1px solid var(--gold-border);
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--gold-dim);
+  border: 1px solid var(--gold-border);
 }
 .ty-badge p {
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.65rem;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-color: var(--gold) !important;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold) !important;
 }
 
 /* ─── FAQ ─── */
 .faq-list { max-width: 720px; }
 details {
-border-bottom: 1px solid var(--border-strong);
-padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border-strong);
+  padding: 1.25rem 0;
 }
 summary {
-font-weight: 500;
-cursor: pointer;
-list-style: none;
-display: flex; justify-content: space-between; align-items: center;
-font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  list-style: none;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.95rem;
 }
 summary::-webkit-details-marker { display: none; }
 summary::after {
-content: '+';
-color: var(--gold);
-font-size: 1.1rem;
-font-family: 'IBM Plex Mono', monospace;
-transition: transform 0.25s;
+  content: '+';
+  color: var(--gold);
+  font-size: 1.1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  transition: transform 0.25s;
+  flex-shrink: 0;
+  margin-left: 1rem;
 }
 details[open] summary::after { transform: rotate(45deg); }
 details p {
-margin-top: 0.75rem;
-color: var(--muted);
-font-size: 0.9rem;
-line-height: 1.7;
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
 /* ─── FOOTER ─── */
 footer {
-background: var(--ink);
-color: #444660;
-padding: 3rem;
-border-top: 1px solid rgba(255,255,255,0.04);
+  background: var(--ink);
+  color: #444660;
+  padding: 3rem;
+  border-top: 1px solid rgba(255,255,255,0.04);
 }
 .footer-inner {
-max-width: 1280px;
-margin: 0 auto;
-display: flex;
-justify-content: space-between;
-align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .footer-logo {
-font-family: 'Playfair Display', serif;
-font-size: 1rem;
-font-weight: 700;
-color: #444660;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #444660;
 }
 .footer-logo span { color: var(--gold); }
-.footer-links {
-display: flex;
-gap: 2rem;
-}
+.footer-links { display: flex; gap: 2rem; }
 .footer-links a {
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.6rem;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-color: #444660;
-text-decoration: none;
-transition: color 0.2s;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #444660;
+  text-decoration: none;
+  transition: color 0.2s;
 }
 .footer-links a:hover { color: var(--gold); }
 .footer-copy {
-font-family: 'IBM Plex Mono', monospace;
-font-size: 0.58rem;
-letter-spacing: 0.08em;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
 }
 
-/* ─── ANIMATIONS ─── */
+/* ─── FADE-IN ─── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── HERO ANIMATION ─── */
 @keyframes fadeUp {
-from { opacity: 0; transform: translateY(28px); }
-to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-
-/* Bar chart animation */
-.chart-bar { animation: barGrow 1.2s cubic-bezier(0.22,1,0.36,1) both; }
-@keyframes barGrow {
-from { transform: scaleY(0); transform-origin: bottom; }
-to { transform: scaleY(1); transform-origin: bottom; }
-}
-.chart-bar:nth-child(1) { animation-delay: 0.1s; }
-.chart-bar:nth-child(2) { animation-delay: 0.2s; }
-.chart-bar:nth-child(3) { animation-delay: 0.3s; }
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1024px) {
-.hero { grid-template-columns: 1fr; gap: 3rem; }
-.hero-panel { position: static; }
-.section-header { grid-template-columns: 1fr; gap: 1.5rem; }
-.market-layout { grid-template-columns: 1fr; gap: 3rem; }
-.ops-layout { grid-template-columns: 1fr; gap: 2rem; }
-.forms-grid { grid-template-columns: 1fr; }
-.moat-grid { grid-template-columns: 1fr; }
-.thesis-grid { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-panel { position: static; }
+  .section-header { grid-template-columns: 1fr; gap: 1.5rem; }
+  .market-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .ops-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .forms-grid { grid-template-columns: 1fr; }
+  .moat-grid { grid-template-columns: 1fr; }
+  .thesis-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
-.hero { padding: 8rem 1.5rem 4rem; }
-.section-wrap { padding: 3.5rem 1.5rem; }
-.forms-section { padding: 3.5rem 1.5rem; }
-.chart-section { padding: 3rem 1.5rem; }
-.thesis-banner { padding: 2.5rem 1.5rem; }
-.thesis-banner-inner { grid-template-columns: 1fr; gap: 2rem; }
-.header-top { padding: 0 1.5rem; }
-.header-meta { gap: 1rem; }
-.footer-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
-.kpi-grid { grid-template-columns: 1fr 1fr; }
-.form-row { grid-template-columns: 1fr; }
+  .hero { padding: 8rem 1.5rem 4rem; }
+  .section-wrap { padding: 3.5rem 1.5rem; }
+  .forms-section { padding: 3.5rem 1.5rem; }
+  .chart-section { padding: 3rem 1.5rem; }
+  .thesis-banner { padding: 2.5rem 1.5rem; }
+  .thesis-banner-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .header-top { padding: 0 1.5rem; }
+  .header-meta { gap: 1rem; }
+  .header-meta a:not(.header-cta) { display: none; }
+  .footer-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .chart-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .ops-metrics { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -1079,616 +1082,667 @@ to { transform: scaleY(1); transform-origin: bottom; }
 
 <!-- ─── HEADER ─── -->
 <header class="site-header">
-<div class="header-top">
-<a href="#" class="logo">Extra<span>Mile</span> Adjusters</a>
-<div class="header-meta">
-<a href="#operations">Operations</a>
-<a href="#market">Market</a>
-<a href="#signup">Body Shops</a>
-<a href="#adjuster">Adjusters</a>
-<a href="#signup" class="header-cta">Get Started</a>
-</div>
-</div>
-
-<!-- Carrier ticker -->
-<div class="ticker-bar">
-<div class="ticker-label">Carrier Network</div>
-<div class="ticker-scroll">
-<div class="ticker-track" id="tickerTrack"></div>
-</div>
-</div>
+  <div class="header-top">
+    <a href="#" class="logo">Extra<span>Mile</span> Adjusters</a>
+    <div class="header-meta">
+      <a href="#operations">Operations</a>
+      <a href="#market">Market</a>
+      <a href="#signup">Body Shops</a>
+      <a href="#adjuster-section">Adjusters</a>
+      <a href="#signup" class="header-cta">Get Started</a>
+    </div>
+  </div>
+  <div class="ticker-bar">
+    <div class="ticker-label">Carrier Network</div>
+    <div class="ticker-scroll">
+      <div class="ticker-track" id="tickerTrack"></div>
+    </div>
+  </div>
 </header>
 
 <!-- ─── HERO ─── -->
 <section class="hero">
-<div class="hero-left" style="animation: fadeUp 0.8s ease both;">
-<div class="hero-eyebrow">
-<div class="eyebrow-line"></div>
-<div class="eyebrow-text">Auto Claims Infrastructure · Est. 2024</div>
-</div>
-<h1 class="hero-headline">
-The Operating<br>
-System for<br>
-<em>Auto Claims.</em>
-</h1>
-<p class="hero-sub">
-Extra Mile Adjusters is a tech-enabled marketplace connecting body shops with certified field and photo adjusters — compressing claim cycle times, reducing friction, and building the first scalable national network in a $42B market.
-</p>
-<div class="hero-actions">
-<a href="#signup" class="btn-ink">Sign Up Your Shop</a>
-<a href="#market" class="btn-ghost">View Platform Overview ↓</a>
-</div>
-</div>
+  <div class="hero-left" style="animation: fadeUp 0.8s ease both;">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-line"></div>
+      <div class="eyebrow-text">Auto Claims Infrastructure · Est. 2024</div>
+    </div>
+    <h1 class="hero-headline">
+      The Operating<br>
+      System for<br>
+      <em>Auto Claims.</em>
+    </h1>
+    <p class="hero-sub">
+      Extra Mile Adjusters is a tech-enabled marketplace connecting body shops with certified field and photo adjusters — compressing claim cycle times, reducing friction, and building the first scalable national network in a $42B market.
+    </p>
+    <div class="hero-actions">
+      <a href="#signup" class="btn-ink">Sign Up Your Shop</a>
+      <a href="#market" class="btn-ghost">View Platform Overview ↓</a>
+    </div>
+  </div>
 
-<div class="hero-panel" style="animation: fadeUp 0.8s ease 0.15s both;">
-<div class="panel-tag">Platform Metrics</div>
-
-<div class="kpi-grid">
-<div class="kpi-cell">
-<div class="kpi-val">4<span>hr</span></div>
-<div class="kpi-label">Avg. Turnaround</div>
-<div class="kpi-delta">↓ 68% vs industry avg</div>
-</div>
-<div class="kpi-cell">
-<div class="kpi-val">550<span>+</span></div>
-<div class="kpi-label">Claims Processed</div>
-<div class="kpi-delta">↑ Growing MoM</div>
-</div>
-<div class="kpi-cell">
-<div class="kpi-val">1.3<span>hr</span></div>
-<div class="kpi-label">Time Saved / Claim</div>
-<div class="kpi-delta">↑ Shop productivity</div>
-</div>
-<div class="kpi-cell">
-<div class="kpi-val">32<span>+</span></div>
-<div class="kpi-label">Carrier Relationships</div>
-<div class="kpi-delta">↑ All major carriers</div>
-</div>
-</div>
-
-<div class="panel-divider"></div>
-
-<p class="panel-summary">
-Early access pricing available for body shops entering the network. 25% off first three estimates for qualified operators.
-</p>
-
-<a href="#signup" class="panel-cta">Claim Early Access Pricing →</a>
-</div>
+  <div class="hero-panel" style="animation: fadeUp 0.8s ease 0.15s both;">
+    <div class="panel-tag">Platform Metrics</div>
+    <div class="kpi-grid">
+      <div class="kpi-cell">
+        <div class="kpi-val">4<span>hr</span></div>
+        <div class="kpi-label">Avg. Turnaround</div>
+        <div class="kpi-delta">↓ 68% vs industry avg</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-val">550<span>+</span></div>
+        <div class="kpi-label">Claims Processed</div>
+        <div class="kpi-delta">↑ Growing MoM</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-val">1.3<span>hr</span></div>
+        <div class="kpi-label">Time Saved / Claim</div>
+        <div class="kpi-delta">↑ Shop productivity</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-val">32<span>+</span></div>
+        <div class="kpi-label">Carrier Relationships</div>
+        <div class="kpi-delta">↑ All major carriers</div>
+      </div>
+    </div>
+    <div class="panel-divider"></div>
+    <p class="panel-summary">
+      Early access pricing available for body shops entering the network. 25% off first three estimates for qualified operators.
+    </p>
+    <a href="#signup" class="panel-cta">Claim Early Access Pricing →</a>
+  </div>
 </section>
 
 <!-- ─── INVESTMENT THESIS ─── -->
 <div class="section-wrap tinted" id="market">
-<div class="section-inner fade-in">
-<div class="section-header center">
-<div class="section-label">Investment Thesis</div>
-<h2>Three Structural <em>Advantages</em></h2>
-</div>
-<div class="thesis-grid">
-<div class="thesis-card">
-<div class="thesis-num">01 — Network Effects</div>
-<h3>Supply & Demand Flywheel</h3>
-<p>Each new body shop drives adjuster utilization. Each new adjuster improves coverage density and turnaround time — attracting more shops. Classic two-sided marketplace compounding.</p>
-</div>
-<div class="thesis-card">
-<div class="thesis-num">02 — Workflow Lock-In</div>
-<h3>Deep Operational Integration</h3>
-<p>CCC software integration, direct carrier relationships, and scheduler embeds create high switching costs once a shop is onboarded. Net revenue retention exceeds 115% in cohort analysis.</p>
-</div>
-<div class="thesis-card">
-<div class="thesis-num">03 — Roll-Up Vehicle</div>
-<h3>Fragmented Market, Clear Consolidation Path</h3>
-<p>$42B TAM served by thousands of independent, sub-scale adjusters with no digital infrastructure. Extra Mile is positioned as the acquiring platform, not a point solution.</p>
-</div>
-</div>
-</div>
+  <div class="section-inner fade-in">
+    <div class="section-header center">
+      <div class="section-label">Investment Thesis</div>
+      <h2>Three Structural <em>Advantages</em></h2>
+    </div>
+    <div class="thesis-grid">
+      <div class="thesis-card">
+        <div class="thesis-num">01 — Network Effects</div>
+        <h3>Supply &amp; Demand Flywheel</h3>
+        <p>Each new body shop drives adjuster utilization. Each new adjuster improves coverage density and turnaround time — attracting more shops. Classic two-sided marketplace compounding.</p>
+      </div>
+      <div class="thesis-card">
+        <div class="thesis-num">02 — Workflow Lock-In</div>
+        <h3>Deep Operational Integration</h3>
+        <p>CCC software integration, direct carrier relationships, and scheduler embeds create high switching costs once a shop is onboarded. Net revenue retention exceeds 115% in cohort analysis.</p>
+      </div>
+      <div class="thesis-card">
+        <div class="thesis-num">03 — Roll-Up Vehicle</div>
+        <h3>Fragmented Market, Clear Consolidation Path</h3>
+        <p>$42B TAM served by thousands of independent, sub-scale adjusters with no digital infrastructure. Extra Mile is positioned as the acquiring platform, not a point solution.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ─── MARKET OPPORTUNITY ─── -->
 <div class="section-wrap navy">
-<div class="section-inner fade-in">
-<div class="section-header">
-<div>
-<div class="section-label">Market Opportunity</div>
-<h2>A $42B Market Running on <em>Fax Machines.</em></h2>
-</div>
-<p class="section-desc">The U.S. auto insurance claims market processes over 14 million collision claims annually. Fewer than 3% of independent adjusters operate with any digital dispatch or marketplace infrastructure.</p>
-</div>
-
-<div class="market-layout">
-<div class="market-stats">
-<div class="market-stat">
-<div class="market-stat-label">U.S. Auto Claims TAM</div>
-<div class="market-stat-val">$42<em>B</em></div>
-</div>
-<div class="market-stat">
-<div class="market-stat-label">Annual Collision Claims</div>
-<div class="market-stat-val">14<em>M+</em></div>
-</div>
-<div class="market-stat">
-<div class="market-stat-label">Independent Adjusters (U.S.)</div>
-<div class="market-stat-val">47<em>K</em></div>
-</div>
-<div class="market-stat">
-<div class="market-stat-label">Digitally Enabled Adjusters</div>
-<div class="market-stat-val">&lt;3<em>%</em></div>
-</div>
-<div class="market-stat">
-<div class="market-stat-label">Avg. Claim Cycle Reduction</div>
-<div class="market-stat-val">68<em>%</em></div>
-</div>
-</div>
-
-<div class="market-text">
-<h3>The Infrastructure Gap is the Opportunity</h3>
-<p>Auto body shops are forced to manage adjuster relationships manually — cold calls, disconnected scheduling, paper estimates. Carriers face unpredictable cycle times and quality variance.</p>
-<p>Extra Mile Adjusters eliminates this friction with a dispatch platform that serves all three stakeholders simultaneously: body shops get faster turnaround, adjusters get consistent volume, carriers get standardized data.</p>
-<ul class="insight-list">
-<li>Photo estimates reduce total cycle time by 4–6 days on average</li>
-<li>Field adjuster dispatch from submission to confirmation in under 2 hours</li>
-<li>CCC-native workflow means zero change management for existing shops</li>
-<li>All major carrier integrations pre-built — no custom development required</li>
-<li>Recurring revenue model: shops pay per estimate, adjusters earn per assignment</li>
-</ul>
-</div>
-</div>
-</div>
+  <div class="section-inner fade-in">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Market Opportunity</div>
+        <h2>A $42B Market Running on <em>Fax Machines.</em></h2>
+      </div>
+      <p class="section-desc">The U.S. auto insurance claims market processes over 14 million collision claims annually. Fewer than 3% of independent adjusters operate with any digital dispatch or marketplace infrastructure.</p>
+    </div>
+    <div class="market-layout">
+      <div class="market-stats">
+        <div class="market-stat">
+          <div class="market-stat-label">U.S. Auto Claims TAM</div>
+          <div class="market-stat-val">$42<em>B</em></div>
+        </div>
+        <div class="market-stat">
+          <div class="market-stat-label">Annual Collision Claims</div>
+          <div class="market-stat-val">14<em>M+</em></div>
+        </div>
+        <div class="market-stat">
+          <div class="market-stat-label">Independent Adjusters (U.S.)</div>
+          <div class="market-stat-val">47<em>K</em></div>
+        </div>
+        <div class="market-stat">
+          <div class="market-stat-label">Digitally Enabled Adjusters</div>
+          <div class="market-stat-val">&lt;3<em>%</em></div>
+        </div>
+        <div class="market-stat">
+          <div class="market-stat-label">Avg. Claim Cycle Reduction</div>
+          <div class="market-stat-val">68<em>%</em></div>
+        </div>
+      </div>
+      <div class="market-text">
+        <h3>The Infrastructure Gap is the Opportunity</h3>
+        <p>Auto body shops are forced to manage adjuster relationships manually — cold calls, disconnected scheduling, paper estimates. Carriers face unpredictable cycle times and quality variance.</p>
+        <p>Extra Mile Adjusters eliminates this friction with a dispatch platform that serves all three stakeholders simultaneously: body shops get faster turnaround, adjusters get consistent volume, carriers get standardized data.</p>
+        <ul class="insight-list">
+          <li>Photo estimates reduce total cycle time by 4–6 days on average</li>
+          <li>Field adjuster dispatch from submission to confirmation in under 2 hours</li>
+          <li>CCC-native workflow means zero change management for existing shops</li>
+          <li>All major carrier integrations pre-built — no custom development required</li>
+          <li>Recurring revenue model: shops pay per estimate, adjusters earn per assignment</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ─── REVENUE CHART ─── -->
 <div class="chart-section fade-in" id="traction">
-<div class="chart-wrap">
-<div class="chart-header">
-<div>
-<div class="section-label" style="color:var(--gold);font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.75rem;">
-<span style="display:inline-block;width:24px;height:1px;background:var(--gold);"></span> Growth Trajectory
-</div>
-<div class="chart-title">Claims Volume by Quarter</div>
-</div>
-<div class="chart-legend">
-<div class="legend-item">
-<div class="legend-dot" style="background:var(--gold);"></div>
-Actual
-</div>
-<div class="legend-item">
-<div class="legend-dot" style="background:rgba(201,168,76,0.3);border:1px solid rgba(201,168,76,0.5);"></div>
-Projected
-</div>
-</div>
-</div>
-
-<!-- Bar chart rendered via JS -->
-<div id="chartArea" class="chart-area">
-<div class="chart-grid">
-<div class="chart-grid-line"></div>
-<div class="chart-grid-line"></div>
-<div class="chart-grid-line"></div>
-<div class="chart-grid-line"></div>
-</div>
-</div>
-</div>
+  <div class="chart-wrap">
+    <div class="chart-header">
+      <div>
+        <div style="color:var(--gold);font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.75rem;">
+          <span style="display:inline-block;width:24px;height:1px;background:var(--gold);"></span> Growth Trajectory
+        </div>
+        <div class="chart-title">Claims Volume by Quarter</div>
+      </div>
+      <div class="chart-legend">
+        <div class="legend-item">
+          <div class="legend-dot" style="background:var(--gold);"></div>
+          Actual
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:rgba(201,168,76,0.3);border:1px solid rgba(201,168,76,0.5);"></div>
+          Projected
+        </div>
+      </div>
+    </div>
+    <div class="chart-container">
+      <div id="chartArea" class="chart-area">
+        <div class="chart-grid">
+          <div class="chart-grid-line"></div>
+          <div class="chart-grid-line"></div>
+          <div class="chart-grid-line"></div>
+          <div class="chart-grid-line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ─── OPERATIONS ─── -->
 <div class="section-wrap" id="operations">
-<div class="section-inner fade-in">
-<div class="section-header">
-<div>
-<div class="section-label">Operations</div>
-<h2>Built for <em>Throughput.</em></h2>
-</div>
-<p class="section-desc">A three-step process engineered around the constraints of collision repair — not generic service marketplace logic.</p>
-</div>
-
-<div class="ops-layout">
-<div class="ops-steps">
-<div class="ops-step active" onclick="setActiveStep(this)">
-<div class="ops-step-num">Step 01</div>
-<h3>Shop Onboarding</h3>
-<p>Under 5-minute setup. CCC integration pre-configured. Team contact within minutes of form submission.</p>
-</div>
-<div class="ops-step" onclick="setActiveStep(this)">
-<div class="ops-step-num">Step 02</div>
-<h3>Estimate Request</h3>
-<p>Shop selects field or photo estimate. Dispatch goes to the nearest certified adjuster with capacity. Confirmation in under 2 hours.</p>
-</div>
-<div class="ops-step" onclick="setActiveStep(this)">
-<div class="ops-step-num">Step 03</div>
-<h3>Delivery & Close</h3>
-<p>Completed estimate delivered directly to the shop's CCC workflow. Adjuster paid on a net-7 basis. No manual reconciliation.</p>
-</div>
-</div>
-
-<div class="ops-visual">
-<div class="ops-visual-tag">Performance Benchmarks — Live Network</div>
-<div style="flex:1;display:flex;align-items:center;">
-<p style="color:#666888;font-size:0.85rem;line-height:1.8;">
-Every estimate in the Extra Mile network is tracked from submission to delivery. SLA compliance, adjuster quality scores, and carrier feedback loops are built into the dispatch engine — not bolted on as reporting.
-</p>
-</div>
-<div class="ops-metrics">
-<div class="ops-metric">
-<div class="ops-metric-val">98<em>%</em></div>
-<div class="ops-metric-label">SLA Compliance</div>
-</div>
-<div class="ops-metric">
-<div class="ops-metric-val">&lt;2<em>hr</em></div>
-<div class="ops-metric-label">Dispatch Confirm</div>
-</div>
-<div class="ops-metric">
-<div class="ops-metric-val">4.8<em>/5</em></div>
-<div class="ops-metric-label">Avg Quality Score</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+  <div class="section-inner fade-in">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Operations</div>
+        <h2>Built for <em>Throughput.</em></h2>
+      </div>
+      <p class="section-desc">A three-step process engineered around the constraints of collision repair — not generic service marketplace logic.</p>
+    </div>
+    <div class="ops-layout">
+      <div class="ops-steps">
+        <div class="ops-step active" onclick="setActiveStep(this)">
+          <div class="ops-step-num">Step 01</div>
+          <h3>Shop Onboarding</h3>
+          <p>Under 5-minute setup. CCC integration pre-configured. Team contact within minutes of form submission.</p>
+        </div>
+        <div class="ops-step" onclick="setActiveStep(this)">
+          <div class="ops-step-num">Step 02</div>
+          <h3>Estimate Request</h3>
+          <p>Shop selects field or photo estimate. Dispatch goes to the nearest certified adjuster with capacity. Confirmation in under 2 hours.</p>
+        </div>
+        <div class="ops-step" onclick="setActiveStep(this)">
+          <div class="ops-step-num">Step 03</div>
+          <h3>Delivery &amp; Close</h3>
+          <p>Completed estimate delivered directly to the shop's CCC workflow. Adjuster paid on a net-7 basis. No manual reconciliation.</p>
+        </div>
+      </div>
+      <div class="ops-visual">
+        <div class="ops-visual-tag">Performance Benchmarks — Live Network</div>
+        <div style="flex:1;display:flex;align-items:center;">
+          <p style="color:#666888;font-size:0.85rem;line-height:1.8;">
+            Every estimate in the Extra Mile network is tracked from submission to delivery. SLA compliance, adjuster quality scores, and carrier feedback loops are built into the dispatch engine — not bolted on as reporting.
+          </p>
+        </div>
+        <div class="ops-metrics">
+          <div class="ops-metric">
+            <div class="ops-metric-val">98<em>%</em></div>
+            <div class="ops-metric-label">SLA Compliance</div>
+          </div>
+          <div class="ops-metric">
+            <div class="ops-metric-val">&lt;2<em>hr</em></div>
+            <div class="ops-metric-label">Dispatch Confirm</div>
+          </div>
+          <div class="ops-metric">
+            <div class="ops-metric-val">4.8<em>/5</em></div>
+            <div class="ops-metric-label">Avg Quality Score</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ─── ACQUISITION BANNER ─── -->
 <div class="thesis-banner">
-<div class="thesis-banner-inner">
-<div>
-<h2>Early Access Pricing.<br>First-Mover Position.</h2>
-<p>Body shops joining during launch lock in 25% below standard rates for their first three estimates. Network density compounds — early entrants benefit most as coverage expands.</p>
-</div>
-<a href="#signup" class="thesis-banner-btn">Claim Your Position →</a>
-</div>
+  <div class="thesis-banner-inner">
+    <div>
+      <h2>Early Access Pricing.<br>First-Mover Position.</h2>
+      <p>Body shops joining during launch lock in 25% below standard rates for their first three estimates. Network density compounds — early entrants benefit most as coverage expands.</p>
+    </div>
+    <a href="#signup" class="thesis-banner-btn">Claim Your Position →</a>
+  </div>
 </div>
 
 <!-- ─── COMPETITIVE MOAT ─── -->
 <div class="section-wrap navy">
-<div class="section-inner fade-in">
-<div class="section-header center">
-<div class="section-label">Competitive Moat</div>
-<h2>Why This Network Is <em>Defensible</em></h2>
-</div>
-
-<div class="moat-grid">
-<div class="moat-card">
-<div class="moat-icon">⚙️</div>
-<h3>Software-Layer Integration</h3>
-<p>CCC is the dominant estimating platform in collision repair. Extra Mile operates natively within CCC workflows — making replacement a workflow disruption, not just a vendor swap.</p>
-<div class="moat-tag">Platform Dependency</div>
-</div>
-<div class="moat-card">
-<div class="moat-icon">🗺️</div>
-<h3>Density-Based Supply Advantage</h3>
-<p>As adjuster coverage density increases in a market, turnaround times compress. The network gets materially better for every shop as it grows — a performance moat competitors can't replicate without years of recruitment.</p>
-<div class="moat-tag">Network Effects</div>
-</div>
-<div class="moat-card">
-<div class="moat-icon">📋</div>
-<h3>Carrier Relationship Data</h3>
-<p>32 carrier relationships, adjuster performance data by carrier, and cycle-time benchmarks by geography create a proprietary dataset unavailable to new entrants or existing point solutions.</p>
-<div class="moat-tag">Data Flywheel</div>
-</div>
-<div class="moat-card">
-<div class="moat-icon">🏗️</div>
-<h3>Roll-Up Infrastructure Ready</h3>
-<p>The platform is architected for multi-market, multi-brand operation. Regional adjuster firms can be onboarded as supply-side partners without rebuilding the core dispatch and billing layer.</p>
-<div class="moat-tag">M&A Platform</div>
-</div>
-</div>
-</div>
+  <div class="section-inner fade-in">
+    <div class="section-header center">
+      <div class="section-label">Competitive Moat</div>
+      <h2>Why This Network Is <em>Defensible</em></h2>
+    </div>
+    <div class="moat-grid">
+      <div class="moat-card">
+        <div class="moat-icon">⚙️</div>
+        <h3>Software-Layer Integration</h3>
+        <p>CCC is the dominant estimating platform in collision repair. Extra Mile operates natively within CCC workflows — making replacement a workflow disruption, not just a vendor swap.</p>
+        <div class="moat-tag">Platform Dependency</div>
+      </div>
+      <div class="moat-card">
+        <div class="moat-icon">🗺️</div>
+        <h3>Density-Based Supply Advantage</h3>
+        <p>As adjuster coverage density increases in a market, turnaround times compress. The network gets materially better for every shop as it grows — a performance moat competitors can't replicate without years of recruitment.</p>
+        <div class="moat-tag">Network Effects</div>
+      </div>
+      <div class="moat-card">
+        <div class="moat-icon">📋</div>
+        <h3>Carrier Relationship Data</h3>
+        <p>32 carrier relationships, adjuster performance data by carrier, and cycle-time benchmarks by geography create a proprietary dataset unavailable to new entrants or existing point solutions.</p>
+        <div class="moat-tag">Data Flywheel</div>
+      </div>
+      <div class="moat-card">
+        <div class="moat-icon">🏗️</div>
+        <h3>Roll-Up Infrastructure Ready</h3>
+        <p>The platform is architected for multi-market, multi-brand operation. Regional adjuster firms can be onboarded as supply-side partners without rebuilding the core dispatch and billing layer.</p>
+        <div class="moat-tag">M&amp;A Platform</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ─── FORMS ─── -->
 <div class="forms-section" id="signup">
-<div class="forms-inner">
-<div class="section-header center fade-in">
-<div class="section-label">Join the Network</div>
-<h2>Body Shops & Adjusters</h2>
-<p class="section-desc" style="margin-top:0.75rem;">Two entry points. One platform. Zero contracts.</p>
-</div>
+  <div class="forms-inner">
+    <div class="section-header center fade-in">
+      <div class="section-label">Join the Network</div>
+      <h2>Body Shops &amp; Adjusters</h2>
+      <p class="section-desc" style="margin-top:0.75rem;">Two entry points. One platform. Zero contracts.</p>
+    </div>
 
-<div class="forms-grid fade-in">
+    <div class="forms-grid fade-in">
 
-<!-- BODY SHOP FORM -->
-<div class="form-card" id="shopFormView">
-<div class="form-card-tag">For Body Shops</div>
-<div class="offer-pill">Early Access — <span>25% Off First 3 Estimates</span></div>
-<h3>Sign Up Your Shop</h3>
-<p>Fast setup, no contracts. A team member will contact you within minutes.</p>
+      <!-- BODY SHOP FORM -->
+      <div id="shopFormView" class="form-card">
+        <div class="form-card-tag">For Body Shops</div>
+        <div class="offer-pill">Early Access — <span>25% Off First 3 Estimates</span></div>
+        <h3>Sign Up Your Shop</h3>
+        <p>Fast setup, no contracts. A team member will contact you within minutes.</p>
 
-<div class="form-row">
-<div class="field">
-<label for="shopName">Shop Name</label>
-<input type="text" id="shopName" placeholder="Johnson's Auto Body" required />
-</div>
-<div class="field">
-<label for="phone">Phone Number</label>
-<input type="tel" id="phone" placeholder="(555) 000-0000" required />
-</div>
-</div>
-<div class="field">
-<label for="address">Shop Address</label>
-<input type="text" id="address" placeholder="123 Main St, City, State" required />
-</div>
-<div class="field">
-<label for="email">Email Address</label>
-<input type="email" id="email" placeholder="you@yourshop.com" required />
-</div>
-<div class="field">
-<label for="ccc">CCC Estimating Software?</label>
-<select id="ccc" required>
-<option value="" disabled selected>Select an option</option>
-<option value="Yes, we use CCC">Yes, we use CCC</option>
-<option value="No, we don't">No — we use something else</option>
-<option value="We use something else">No — pen and paper</option>
-</select>
-</div>
-<button class="submit-btn" id="shopSubmitBtn" onclick="submitShopForm()">Submit & Claim 25% Discount →</button>
-<p class="form-note">No spam. No contracts. Response within minutes.</p>
-</div>
-<div class="form-card" id="shopThankYou" style="display:none;">
-<div class="thank-you-box">
-<div class="ty-icon">✓</div>
-<h3>You're In.</h3>
-<p>Submission received.</p>
-<p>A team member will reach out within minutes.</p>
-<div class="ty-badge"><p>25% Discount Reserved ✓</p></div>
-</div>
-</div>
+        <div class="form-row">
+          <div class="field">
+            <label for="shopName">Shop Name</label>
+            <input type="text" id="shopName" placeholder="Johnson's Auto Body" />
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="(555) 000-0000" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="address">Shop Address</label>
+          <input type="text" id="address" placeholder="123 Main St, City, State" />
+        </div>
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="you@yourshop.com" />
+        </div>
+        <div class="field">
+          <label for="ccc">CCC Estimating Software?</label>
+          <select id="ccc">
+            <option value="" disabled selected>Select an option</option>
+            <option value="Yes, we use CCC">Yes, we use CCC</option>
+            <option value="No, we use something else">No — we use something else</option>
+            <option value="No, pen and paper">No — pen and paper</option>
+          </select>
+        </div>
+        <button class="submit-btn" id="shopSubmitBtn" onclick="submitShopForm()">Submit &amp; Claim 25% Discount →</button>
+        <p class="form-note">No spam. No contracts. Response within minutes.</p>
+      </div>
 
-<!-- ADJUSTER FORM -->
-<div class="form-card" id="adjFormView">
-<div class="form-card-tag">For Adjusters</div>
-<h3>Apply to the Network</h3>
-<p>2-minute application. Every submission reviewed personally.</p>
+      <div id="shopThankYou" class="form-card" style="display:none;">
+        <div class="thank-you-box">
+          <div class="ty-icon">✓</div>
+          <h3>You're In.</h3>
+          <p>Submission received.</p>
+          <p>A team member will reach out within minutes.</p>
+          <div class="ty-badge"><p>25% Discount Reserved ✓</p></div>
+        </div>
+      </div>
 
-<div class="form-row">
-<div class="field">
-<label for="adjName">Full Name</label>
-<input type="text" id="adjName" placeholder="Jane Smith" required />
-</div>
-<div class="field">
-<label for="adjPhone">Phone Number</label>
-<input type="tel" id="adjPhone" placeholder="(555) 000-0000" required />
-</div>
-</div>
-<div class="field">
-<label for="adjEmail">Email Address</label>
-<input type="email" id="adjEmail" placeholder="jane@email.com" required />
-</div>
-<div class="field">
-<label for="adjLocation">Coverage Area</label>
-<input type="text" id="adjLocation" placeholder="Los Angeles, CA" required />
-</div>
-<div class="form-row">
-<div class="field">
-<label for="adjExp">Years Experience</label>
-<select id="adjExp" required>
-<option value="" disabled selected>Select</option>
-<option value="0-1 years">Less than 1 year</option>
-<option value="1-3 years">1–3 years</option>
-<option value="3-5 years">3–5 years</option>
-<option value="5-10 years">5–10 years</option>
-<option value="10+ years">10+ years</option>
-</select>
-</div>
-<div class="field">
-<label for="adjType">Estimate Type</label>
-<select id="adjType" required>
-<option value="" disabled selected>Select</option>
-<option value="Field only">Field only</option>
-<option value="Photo only">Photo only</option>
-<option value="Both field and photo">Both</option>
-</select>
-</div>
-</div>
-<div class="field">
-<label for="adjCert">Certifications / Software</label>
-<input type="text" id="adjCert" placeholder="CCC, Xactimate, AIC, ASE..." />
-</div>
-<div class="field">
-<label for="adjNotes">Additional Notes (optional)</label>
-<textarea id="adjNotes" placeholder="Carriers, specialties, availability..."></textarea>
-</div>
-<button class="submit-btn" id="adjSubmitBtn" onclick="submitAdjusterForm()">Apply to Join the Network →</button>
-<p class="form-note">Reviewed personally. No automated rejections.</p>
-</div>
-<div class="form-card" id="adjThankYou" style="display:none;">
-<div class="thank-you-box">
-<div class="ty-icon">✓</div>
-<h3>Application Received.</h3>
-<p>Thanks for applying to Extra Mile.</p>
-<p>We'll review and follow up within 24 hours.</p>
-<div class="ty-badge"><p>Application Submitted ✓</p></div>
-</div>
-</div>
+      <!-- ADJUSTER FORM -->
+      <div id="adjFormView" class="form-card" id="adjuster-section">
+        <div class="form-card-tag">For Adjusters</div>
+        <h3>Apply to the Network</h3>
+        <p>2-minute application. Every submission reviewed personally.</p>
 
-</div>
-</div>
+        <div class="form-row">
+          <div class="field">
+            <label for="adjName">Full Name</label>
+            <input type="text" id="adjName" placeholder="Jane Smith" />
+          </div>
+          <div class="field">
+            <label for="adjPhone">Phone Number</label>
+            <input type="tel" id="adjPhone" placeholder="(555) 000-0000" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="adjEmail">Email Address</label>
+          <input type="email" id="adjEmail" placeholder="jane@email.com" />
+        </div>
+        <div class="field">
+          <label for="adjLocation">Coverage Area</label>
+          <input type="text" id="adjLocation" placeholder="Los Angeles, CA" />
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="adjExp">Years Experience</label>
+            <select id="adjExp">
+              <option value="" disabled selected>Select</option>
+              <option value="0-1 years">Less than 1 year</option>
+              <option value="1-3 years">1–3 years</option>
+              <option value="3-5 years">3–5 years</option>
+              <option value="5-10 years">5–10 years</option>
+              <option value="10+ years">10+ years</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="adjType">Estimate Type</label>
+            <select id="adjType">
+              <option value="" disabled selected>Select</option>
+              <option value="Field only">Field only</option>
+              <option value="Photo only">Photo only</option>
+              <option value="Both field and photo">Both</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="adjCert">Certifications / Software</label>
+          <input type="text" id="adjCert" placeholder="CCC, Xactimate, AIC, ASE..." />
+        </div>
+        <div class="field">
+          <label for="adjNotes">Additional Notes (optional)</label>
+          <textarea id="adjNotes" placeholder="Carriers, specialties, availability..."></textarea>
+        </div>
+        <button class="submit-btn" id="adjSubmitBtn" onclick="submitAdjusterForm()">Apply to Join the Network →</button>
+        <p class="form-note">Reviewed personally. No automated rejections.</p>
+      </div>
+
+      <div id="adjThankYou" class="form-card" style="display:none;">
+        <div class="thank-you-box">
+          <div class="ty-icon">✓</div>
+          <h3>Application Received.</h3>
+          <p>Thanks for applying to Extra Mile.</p>
+          <p>We'll review and follow up within 24 hours.</p>
+          <div class="ty-badge"><p>Application Submitted ✓</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <!-- ─── FAQ ─── -->
 <div class="section-wrap" id="faq">
-<div class="section-inner fade-in">
-<div class="section-header">
-<div>
-<div class="section-label">FAQ</div>
-<h2>Common <em>Questions</em></h2>
-</div>
-</div>
-<div class="faq-list">
-<details>
-<summary>What estimate types do you offer?</summary>
-<p>Both in-person field estimates and remote photo estimates. Choose the option that fits your shop's workflow and timeline — or use both depending on the job.</p>
-</details>
-<details>
-<summary>How quickly will I hear back after signing up?</summary>
-<p>We contact every new shop within minutes of receiving a form submission during business hours. No automated queues.</p>
-</details>
-<details>
-<summary>Do I need to use CCC?</summary>
-<p>No — CCC is the most common platform we integrate with, but compatibility is discussed during onboarding. We work with all major estimating tools.</p>
-</details>
-<details>
-<summary>Is there a contract or minimum volume?</summary>
-<p>No contracts, no minimums. Use Extra Mile when you need it. The platform scales with your shop's volume.</p>
-</details>
-<details>
-<summary>How does the 25% early access discount work?</summary>
-<p>Shops that join during early access receive 25% off their first three estimates. Applied automatically — no codes, no friction.</p>
-</details>
-<details>
-<summary>What carriers do your adjusters work with?</summary>
-<p>All major carriers: State Farm, GEICO, Allstate, Progressive, USAA, Farmers, Liberty Mutual, Nationwide, Travelers, AAA, and 22 others.</p>
-</details>
-</div>
-</div>
+  <div class="section-inner fade-in">
+    <div class="section-header">
+      <div>
+        <div class="section-label">FAQ</div>
+        <h2>Common <em>Questions</em></h2>
+      </div>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>What estimate types do you offer?</summary>
+        <p>Both in-person field estimates and remote photo estimates. Choose the option that fits your shop's workflow and timeline — or use both depending on the job.</p>
+      </details>
+      <details>
+        <summary>How quickly will I hear back after signing up?</summary>
+        <p>We contact every new shop within minutes of receiving a form submission during business hours. No automated queues.</p>
+      </details>
+      <details>
+        <summary>Do I need to use CCC?</summary>
+        <p>No — CCC is the most common platform we integrate with, but compatibility is discussed during onboarding. We work with all major estimating tools.</p>
+      </details>
+      <details>
+        <summary>Is there a contract or minimum volume?</summary>
+        <p>No contracts, no minimums. Use Extra Mile when you need it. The platform scales with your shop's volume.</p>
+      </details>
+      <details>
+        <summary>How does the 25% early access discount work?</summary>
+        <p>Shops that join during early access receive 25% off their first three estimates. Applied automatically — no codes, no friction.</p>
+      </details>
+      <details>
+        <summary>What carriers do your adjusters work with?</summary>
+        <p>All major carriers: State Farm, GEICO, Allstate, Progressive, USAA, Farmers, Liberty Mutual, Nationwide, Travelers, AAA, and 22 others.</p>
+      </details>
+    </div>
+  </div>
 </div>
 
 <!-- ─── FOOTER ─── -->
 <footer>
-<div class="footer-inner">
-<div class="footer-logo">Extra<span>Mile</span> Adjusters</div>
-<div class="footer-links">
-<a href="#signup">Body Shops</a>
-<a href="#adjuster">Adjusters</a>
-<a href="#market">Platform</a>
-<a href="#faq">FAQ</a>
-</div>
-<div class="footer-copy">© 2025 Extra Mile Adjusters</div>
-</div>
+  <div class="footer-inner">
+    <div class="footer-logo">Extra<span>Mile</span> Adjusters</div>
+    <div class="footer-links">
+      <a href="#signup">Body Shops</a>
+      <a href="#adjuster-section">Adjusters</a>
+      <a href="#market">Platform</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="footer-copy">© 2025 Extra Mile Adjusters</div>
+  </div>
 </footer>
 
 <script>
 // ─── TICKER ───
-const carriers = [
-'State Farm','GEICO','Allstate','Progressive','USAA','Farmers',
-'Liberty Mutual','Nationwide','Travelers','AAA','Safeco','Erie Insurance',
-'Metlife Auto','American Family','Kemper','Hanover','Hartford','Amica',
-'Auto-Owners','Mercury Insurance','Bristol West','Dairyland','Infinity Auto',
-'National General','Root Insurance','Clearcover','Lemonade','Branch Insurance',
-'Kin Insurance','CSAA','Toggle','Hippo'
-];
-const activeOnes = new Set([0,3,4,7,10,15,20]);
-const track = document.getElementById('tickerTrack');
-const html = carriers.map((c,i) =>
-`<span class="ticker-item${activeOnes.has(i)?' active':''}"><span class="dot"></span>${c}</span>`
-).join('');
-track.innerHTML = html + html;
+(function() {
+  const carriers = [
+    'State Farm','GEICO','Allstate','Progressive','USAA','Farmers',
+    'Liberty Mutual','Nationwide','Travelers','AAA','Safeco','Erie Insurance',
+    'MetLife Auto','American Family','Kemper','Hanover','Hartford','Amica',
+    'Auto-Owners','Mercury Insurance','Bristol West','Dairyland','Infinity Auto',
+    'National General','Root Insurance','Clearcover','Lemonade','Branch Insurance',
+    'Kin Insurance','CSAA','Toggle','Hippo'
+  ];
+  const activeOnes = new Set([0,3,4,7,10,15,20]);
+  const track = document.getElementById('tickerTrack');
+  const html = carriers.map((c, i) =>
+    `<span class="ticker-item${activeOnes.has(i) ? ' active' : ''}"><span class="dot"></span>${c}</span>`
+  ).join('');
+  // Duplicate for seamless loop
+  track.innerHTML = html + html;
+})();
 
 // ─── REVENUE CHART ───
-const chartData = [
-{ label: 'Q1 '24', val: 38, type: 'actual' },
-{ label: 'Q2 '24', val: 72, type: 'actual' },
-{ label: 'Q3 '24', val: 118, type: 'actual' },
-{ label: 'Q4 '24', val: 165, type: 'actual' },
-{ label: 'Q1 '25', val: 230, type: 'actual' },
-{ label: 'Q2 '25', val: 320, type: 'projected' },
-{ label: 'Q3 '25', val: 430, type: 'projected' },
-{ label: 'Q4 '25', val: 570, type: 'projected' },
-];
-const maxVal = Math.max(...chartData.map(d => d.val));
-const area = document.getElementById('chartArea');
+(function() {
+  const chartData = [
+    { label: "Q1 '24", val: 38,  type: 'actual' },
+    { label: "Q2 '24", val: 72,  type: 'actual' },
+    { label: "Q3 '24", val: 118, type: 'actual' },
+    { label: "Q4 '24", val: 165, type: 'actual' },
+    { label: "Q1 '25", val: 230, type: 'actual' },
+    { label: "Q2 '25", val: 320, type: 'projected' },
+    { label: "Q3 '25", val: 430, type: 'projected' },
+    { label: "Q4 '25", val: 570, type: 'projected' },
+  ];
+  const maxVal = Math.max(...chartData.map(d => d.val));
+  const area = document.getElementById('chartArea');
 
-chartData.forEach((d, i) => {
-const group = document.createElement('div');
-group.className = 'chart-bar-group';
+  chartData.forEach((d, i) => {
+    const group = document.createElement('div');
+    group.className = 'chart-bar-group';
 
-const bar = document.createElement('div');
-bar.className = `chart-bar ${d.type}`;
-bar.style.height = `${(d.val / maxVal) * 100}%`;
-bar.style.animationDelay = `${i * 0.08}s`;
+    const bar = document.createElement('div');
+    bar.className = `chart-bar ${d.type}`;
+    const heightPct = (d.val / maxVal) * 100;
+    bar.style.height = `${heightPct}%`;
+    // Animate with staggered delay via IntersectionObserver
+    bar.dataset.delay = String(i * 0.08);
 
-const valLabel = document.createElement('div');
-valLabel.className = 'chart-bar-val';
-valLabel.textContent = d.val >= 100 ? `${d.val}` : `${d.val}`;
-bar.appendChild(valLabel);
+    const valLabel = document.createElement('div');
+    valLabel.className = 'chart-bar-val';
+    valLabel.textContent = String(d.val);
+    bar.appendChild(valLabel);
 
-const label = document.createElement('div');
-label.className = 'chart-bar-label';
-label.textContent = d.label;
+    const label = document.createElement('div');
+    label.className = 'chart-bar-label';
+    label.textContent = d.label;
+    // Label is absolutely positioned relative to group
+    group.style.position = 'relative';
 
-group.appendChild(bar);
-group.appendChild(label);
-area.appendChild(group);
-});
+    group.appendChild(bar);
+    group.appendChild(label);
+    area.appendChild(group);
+  });
+
+  // Animate bars when chart scrolls into view
+  const chartSection = document.querySelector('.chart-section');
+  let animated = false;
+  const chartObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !animated) {
+        animated = true;
+        document.querySelectorAll('.chart-bar').forEach(bar => {
+          const delay = parseFloat(bar.dataset.delay || '0');
+          bar.style.animation = `barGrow 1.0s cubic-bezier(0.22,1,0.36,1) ${delay}s both`;
+        });
+      }
+    });
+  }, { threshold: 0.15 });
+  if (chartSection) chartObserver.observe(chartSection);
+})();
 
 // ─── OPS STEP TOGGLE ───
 function setActiveStep(el) {
-document.querySelectorAll('.ops-step').forEach(s => s.classList.remove('active'));
-el.classList.add('active');
+  document.querySelectorAll('.ops-step').forEach(s => s.classList.remove('active'));
+  el.classList.add('active');
 }
 
-// ─── FADE IN OBSERVER ───
-const observer = new IntersectionObserver(entries => {
-entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+// ─── FADE-IN OBSERVER ───
+const fadeObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
 }, { threshold: 0.06 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+// ─── FORM VALIDATION HELPER ───
+function validateFields(fields) {
+  for (const f of fields) {
+    if (!f || f === '') return false;
+  }
+  return true;
+}
 
 // ─── BODY SHOP FORM ───
 async function submitShopForm() {
-const shopName = document.getElementById('shopName').value.trim();
-const phone = document.getElementById('phone').value.trim();
-const address = document.getElementById('address').value.trim();
-const email = document.getElementById('email').value.trim();
-const ccc = document.getElementById('ccc').value;
-if (!shopName || !phone || !address || !email || !ccc) {
-alert('Please fill out all fields.'); return;
-}
-const btn = document.getElementById('shopSubmitBtn');
-btn.textContent = 'Submitting…'; btn.disabled = true;
-try {
-const res = await fetch('https://api.web3forms.com/submit', {
-method: 'POST',
-headers: { 'Content-Type': 'application/json' },
-body: JSON.stringify({
-access_key: '573a82a1-7d83-4375-96fc-8e183f50541e',
-subject: '🚨 New Body Shop Sign Up — Extra Mile Adjusters',
-shop_name: shopName, phone, address, email, ccc_software: ccc
-})
-});
-if (res.ok) {
-document.getElementById('shopFormView').style.display = 'none';
-document.getElementById('shopThankYou').style.display = 'block';
-} else { throw new Error(); }
-} catch {
-btn.textContent = 'Submit & Claim 25% Discount →'; btn.disabled = false;
-alert('Something went wrong. Please try again.');
-}
+  const shopName = document.getElementById('shopName').value.trim();
+  const phone    = document.getElementById('phone').value.trim();
+  const address  = document.getElementById('address').value.trim();
+  const email    = document.getElementById('email').value.trim();
+  const ccc      = document.getElementById('ccc').value;
+
+  if (!validateFields([shopName, phone, address, email, ccc])) {
+    alert('Please fill out all fields before submitting.');
+    return;
+  }
+
+  const btn = document.getElementById('shopSubmitBtn');
+  btn.textContent = 'Submitting…';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: '573a82a1-7d83-4375-96fc-8e183f50541e',
+        subject: '🚨 New Body Shop Sign Up — Extra Mile Adjusters',
+        shop_name: shopName,
+        phone,
+        address,
+        email,
+        ccc_software: ccc
+      })
+    });
+    if (res.ok) {
+      document.getElementById('shopFormView').style.display = 'none';
+      document.getElementById('shopThankYou').style.display = 'block';
+    } else {
+      throw new Error('Server error');
+    }
+  } catch (err) {
+    console.error(err);
+    btn.textContent = 'Submit & Claim 25% Discount →';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or contact us directly.');
+  }
 }
 
 // ─── ADJUSTER FORM ───
 async function submitAdjusterForm() {
-const name = document.getElementById('adjName').value.trim();
-const phone = document.getElementById('adjPhone').value.trim();
-const email = document.getElementById('adjEmail').value.trim();
-const location = document.getElementById('adjLocation').value.trim();
-const exp = document.getElementById('adjExp').value;
-const type = document.getElementById('adjType').value;
-const cert = document.getElementById('adjCert').value.trim();
-const notes = document.getElementById('adjNotes').value.trim();
-if (!name || !phone || !email || !location || !exp || !type) {
-alert('Please fill out all required fields.'); return;
-}
-const btn = document.getElementById('adjSubmitBtn');
-btn.textContent = 'Submitting…'; btn.disabled = true;
-try {
-const res = await fetch('https://api.web3forms.com/submit', {
-method: 'POST',
-headers: { 'Content-Type': 'application/json' },
-body: JSON.stringify({
-access_key: '573a82a1-7d83-4375-96fc-8e183f50541e',
-subject: '🔧 New Adjuster Application — Extra Mile Adjusters',
-full_name: name, phone, email, coverage_area: location,
-years_experience: exp, estimate_type: type,
-certifications: cert || 'Not specified',
-additional_notes: notes || 'None'
-})
-});
-if (res.ok) {
-document.getElementById('adjFormView').style.display = 'none';
-document.getElementById('adjThankYou').style.display = 'block';
-} else { throw new Error(); }
-} catch {
-btn.textContent = 'Apply to Join the Network →'; btn.disabled = false;
-alert('Something went wrong. Please try again.');
-}
+  const name     = document.getElementById('adjName').value.trim();
+  const phone    = document.getElementById('adjPhone').value.trim();
+  const email    = document.getElementById('adjEmail').value.trim();
+  const location = document.getElementById('adjLocation').value.trim();
+  const exp      = document.getElementById('adjExp').value;
+  const type     = document.getElementById('adjType').value;
+  const cert     = document.getElementById('adjCert').value.trim();
+  const notes    = document.getElementById('adjNotes').value.trim();
+
+  if (!validateFields([name, phone, email, location, exp, type])) {
+    alert('Please fill out all required fields before submitting.');
+    return;
+  }
+
+  const btn = document.getElementById('adjSubmitBtn');
+  btn.textContent = 'Submitting…';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: '573a82a1-7d83-4375-96fc-8e183f50541e',
+        subject: '🔧 New Adjuster Application — Extra Mile Adjusters',
+        full_name: name,
+        phone,
+        email,
+        coverage_area: location,
+        years_experience: exp,
+        estimate_type: type,
+        certifications: cert || 'Not specified',
+        additional_notes: notes || 'None'
+      })
+    });
+    if (res.ok) {
+      document.getElementById('adjFormView').style.display = 'none';
+      document.getElementById('adjThankYou').style.display = 'block';
+    } else {
+      throw new Error('Server error');
+    }
+  } catch (err) {
+    console.error(err);
+    btn.textContent = 'Apply to Join the Network →';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or contact us directly.');
+  }
 }
 </script>
-
 </body>
 </html>
