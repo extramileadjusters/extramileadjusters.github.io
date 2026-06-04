@@ -1570,14 +1570,14 @@ footer {
 // ─── REVENUE CHART ───
 (function() {
   const chartData = [
-    { label: "Q1 '24", val: 38,  type: 'actual' },
-    { label: "Q2 '24", val: 72,  type: 'actual' },
-    { label: "Q3 '24", val: 118, type: 'actual' },
-    { label: "Q4 '24", val: 165, type: 'actual' },
-    { label: "Q1 '25", val: 230, type: 'actual' },
-    { label: "Q2 '25", val: 320, type: 'projected' },
-    { label: "Q3 '25", val: 430, type: 'projected' },
-    { label: "Q4 '25", val: 570, type: 'projected' },
+    { label: "Q1 '25", val: 38,  type: 'actual' },
+    { label: "Q2 '25", val: 72,  type: 'actual' },
+    { label: "Q3 '25", val: 118, type: 'actual' },
+    { label: "Q4 '25", val: 165, type: 'actual' },
+    { label: "Q1 '26", val: 230, type: 'actual' },
+    { label: "Q2 '26", val: 320, type: 'projected' },
+    { label: "Q3 '26", val: 430, type: 'projected' },
+    { label: "Q4 '26", val: 570, type: 'projected' },
   ];
   const maxVal = Math.max(...chartData.map(d => d.val));
   const area = document.getElementById('chartArea');
