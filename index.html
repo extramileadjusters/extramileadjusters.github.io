@@ -1558,7 +1558,7 @@ footer {
     'National General','Root Insurance','Clearcover','Lemonade','Branch Insurance',
     'Kin Insurance','CSAA','Toggle','Hippo'
   ];
-  const activeOnes = new Set([0,2,4,7,10,15,20]);
+  const activeOnes = new Set([1,3,4,7,10,15,20]);
   const track = document.getElementById('tickerTrack');
   const html = carriers.map((c, i) =>
     `<span class="ticker-item${activeOnes.has(i) ? ' active' : ''}"><span class="dot"></span>${c}</span>`
