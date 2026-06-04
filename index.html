@@ -83,7 +83,7 @@ transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--yellow); }
 
-/* Carrier banner — two scrolling rows */
+/* Carrier banner — single scrolling row */
 .carrier-banner {
 background: #050505;
 overflow: hidden;
@@ -94,9 +94,7 @@ padding: 0;
 overflow: hidden;
 position: relative;
 padding: 0.5rem 0;
-border-bottom: 1px solid #111;
 }
-.carrier-row:last-child { border-bottom: none; }
 .carrier-row::before,
 .carrier-row::after {
 content: '';
@@ -114,8 +112,7 @@ display: flex;
 white-space: nowrap;
 width: max-content;
 }
-.carrier-row:nth-child(1) .carrier-track { animation: scrollLeft 30s linear infinite; }
-.carrier-row:nth-child(2) .carrier-track { animation: scrollRight 36s linear infinite; }
+.carrier-row .carrier-track { animation: scrollLeft 30s linear infinite; }
 
 .carrier-track:hover { animation-play-state: paused; }
 
@@ -137,10 +134,6 @@ border-right: 1px solid #111;
 @keyframes scrollLeft {
 0% { transform: translateX(0); }
 100% { transform: translateX(-50%); }
-}
-@keyframes scrollRight {
-0% { transform: translateX(-50%); }
-100% { transform: translateX(0); }
 }
 
 /* ─── HERO ─── */
@@ -513,7 +506,6 @@ h1 { font-size: 3rem; }
 <!-- ─── MARKET-STYLE HEADER ─── -->
 
 <header class="market-header">
-<!-- Logo + Nav -->
 <!-- Centered nav links only -->
 <div class="market-topbar">
 <nav class="nav-links">
@@ -525,13 +517,10 @@ h1 { font-size: 3rem; }
 </div>
 
 ```
-<!-- Two-row scrolling carrier banner -->
+<!-- Single-row scrolling carrier banner -->
 <div class="carrier-banner">
 <div class="carrier-row">
 <div class="carrier-track" id="row1"></div>
-</div>
-<div class="carrier-row">
-<div class="carrier-track" id="row2"></div>
 </div>
 </div>
 ```
@@ -830,13 +819,11 @@ Extra<span style="color:var(--yellow)">Mile</span> Adjusters
 </footer>
 
 <script>
-// ─── CARRIER BANNER (two rows, names only) ───
-const row1Carriers = [
+// ─── CARRIER BANNER (single row, all carriers combined) ───
+const allCarriers = [
 'State Farm', 'GEICO', 'Allstate', 'Progressive', 'USAA', 'Farmers',
 'Liberty Mutual', 'Nationwide', 'Travelers', 'AAA', 'Safeco', 'Erie Insurance',
-'Metlife Auto', 'American Family', 'Kemper', 'Hanover Insurance'
-];
-const row2Carriers = [
+'Metlife Auto', 'American Family', 'Kemper', 'Hanover Insurance',
 'Hartford', 'Amica', 'Auto-Owners', 'Mercury Insurance', 'Bristol West',
 'Dairyland', 'Infinity Auto', 'National General', 'Hippo', 'Root Insurance',
 'Clearcover', 'Lemonade', 'Toggle', 'Branch Insurance', 'Kin Insurance', 'CSAA'
@@ -849,11 +836,8 @@ return names.map((n, i) =>
 }
 
 const r1 = document.getElementById('row1');
-const r2 = document.getElementById('row2');
-const html1 = buildCarrierRow(row1Carriers, 4);
-const html2 = buildCarrierRow(row2Carriers, 3);
+const html1 = buildCarrierRow(allCarriers, 4);
 r1.innerHTML = html1 + html1; // duplicate for seamless loop
-r2.innerHTML = html2 + html2;
 
 // ─── FADE IN OBSERVER ───
 const observer = new IntersectionObserver(entries => {
