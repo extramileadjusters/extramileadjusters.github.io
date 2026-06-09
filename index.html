@@ -40,7 +40,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Grain overlay */
 body::before {
   content: '';
   position: fixed; inset: 0;
@@ -48,7 +47,6 @@ body::before {
   pointer-events: none; z-index: 1000; opacity: 0.5;
 }
 
-/* ─── HEADER ─── */
 .site-header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   background: var(--cream);
@@ -78,7 +76,6 @@ body::before {
   letter-spacing: 0.1em !important; text-transform: uppercase !important;
 }
 
-/* ─── TICKER ─── */
 .ticker-bar {
   background: var(--ink); overflow: hidden; height: 32px;
   display: flex; align-items: center;
@@ -113,32 +110,6 @@ body::before {
 .ticker-item.active .dot { opacity: 1; }
 @keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-/* ─── AUDIENCE TOGGLE ─── */
-.audience-strip {
-  background: var(--ink);
-  display: flex;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  padding: 0 3rem;
-  gap: 0;
-}
-.audience-btn {
-  padding: 0.7rem 2rem;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #555770;
-  border: none;
-  background: none;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
-  white-space: nowrap;
-}
-.audience-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
-.audience-btn:hover:not(.active) { color: #8890b0; }
-
-/* ─── HERO ─── */
 .hero {
   padding: 10rem 3rem 5rem;
   max-width: 1280px;
@@ -171,7 +142,6 @@ body::before {
 }
 .hero-headline em { font-style: italic; color: var(--gold); }
 
-/* Fade-swap for headline content */
 .hero-headline .hl-inner {
   display: block;
   opacity: 1;
@@ -187,7 +157,6 @@ body::before {
 }
 .hero-sub.fading { opacity: 0; }
 
-/* Proof bar */
 .proof-bar {
   display: flex; gap: 0; margin-bottom: 2.5rem;
   border: 1px solid var(--border-strong);
@@ -229,7 +198,6 @@ body::before {
 }
 .btn-ghost:hover { color: var(--ink); }
 
-/* ─── HERO RIGHT PANEL ─── */
 .hero-panel {
   background: var(--ink); padding: 2.5rem; color: var(--cream);
   position: sticky; top: 120px;
@@ -241,7 +209,6 @@ body::before {
 }
 .panel-tag::after { content: ''; flex: 1; height: 1px; background: rgba(201,168,76,0.2); }
 
-/* Pain points list */
 .pain-list { list-style: none; margin-bottom: 1.5rem; }
 .pain-list li {
   display: flex; align-items: flex-start; gap: 0.85rem;
@@ -263,7 +230,6 @@ body::before {
 }
 .panel-cta:hover { background: var(--gold-light); }
 
-/* ─── SOCIAL PROOF BAND ─── */
 .proof-band {
   background: var(--ink);
   border-top: 1px solid rgba(255,255,255,0.04);
@@ -295,7 +261,6 @@ body::before {
 }
 .testimonial-attr strong { color: var(--gold); display: block; margin-bottom: 0.2rem; }
 
-/* ─── SECTION FRAMEWORK ─── */
 .section-wrap { border-top: 1px solid var(--border-strong); padding: 5rem 3rem; }
 .section-wrap.dark { background: var(--ink); color: var(--cream); border-top: none; }
 .section-wrap.navy { background: var(--navy); color: var(--cream); border-top: none; }
@@ -320,7 +285,6 @@ h2 em { font-style: italic; color: var(--gold); }
 .section-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.75; font-weight: 300; }
 .dark .section-desc { color: #888aaa; }
 
-/* ─── VALUE PROPS FOR SHOPS ─── */
 .vp-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
   background: var(--border-strong); margin-top: 3rem;
@@ -353,7 +317,6 @@ h2 em { font-style: italic; color: var(--gold); }
 }
 .vp-stat span { color: var(--gold); font-size: 1.1rem; font-family: 'Playfair Display', serif; }
 
-/* ─── HOW IT WORKS ─── */
 .steps-section { padding: 5rem 3rem; background: var(--ink); }
 .steps-inner { max-width: 1280px; margin: 0 auto; }
 .steps-header { margin-bottom: 3.5rem; }
@@ -362,7 +325,6 @@ h2 em { font-style: italic; color: var(--gold); }
   gap: 1px; background: rgba(255,255,255,0.05);
   position: relative;
 }
-/* Connector line */
 .steps-row::before {
   content: ''; position: absolute;
   top: 2.6rem; left: calc(16.66% + 1rem); right: calc(16.66% + 1rem);
@@ -393,7 +355,6 @@ h2 em { font-style: italic; color: var(--gold); }
 }
 .step-time::before { content: '⏱'; }
 
-/* ─── PRICING CLARITY ─── */
 .pricing-strip {
   background: var(--gold);
   padding: 3rem 3rem;
@@ -428,7 +389,6 @@ h2 em { font-style: italic; color: var(--gold); }
   color: rgba(13,15,20,0.55); margin-top: 0.3rem;
 }
 
-/* ─── ADJUSTER SECTION ─── */
 .adjuster-hero {
   background: var(--navy); padding: 5rem 3rem;
 }
@@ -482,7 +442,6 @@ h2 em { font-style: italic; color: var(--gold); }
 }
 .adj-stat-desc { font-size: 0.8rem; color: #666888; margin-top: 0.3rem; line-height: 1.4; }
 
-/* ─── OBJECTION HANDLER ─── */
 .obj-section { padding: 5rem 3rem; background: var(--cream-dark); }
 .obj-inner { max-width: 1280px; margin: 0 auto; }
 .obj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
@@ -507,7 +466,6 @@ h2 em { font-style: italic; color: var(--gold); }
 .obj-item strong { display: block; font-size: 0.88rem; color: var(--ink); margin-bottom: 0.2rem; }
 .obj-item p { font-size: 0.84rem; color: var(--muted); line-height: 1.55; }
 
-/* ─── MARKET SECTION ─── */
 .market-section { background: var(--ink); padding: 5rem 3rem; }
 .market-inner { max-width: 1280px; margin: 0 auto; }
 .market-header { margin-bottom: 3.5rem; }
@@ -542,7 +500,6 @@ h2 em { font-style: italic; color: var(--gold); }
 }
 .insight-list li::before { content: '→'; color: var(--gold); flex-shrink: 0; margin-top: 0.05rem; }
 
-/* ─── FORMS ─── */
 .forms-section { background: var(--cream-dark); padding: 5rem 3rem; border-top: 1px solid var(--border-strong); }
 .forms-inner { max-width: 1280px; margin: 0 auto; }
 .forms-header { text-align: center; margin-bottom: 3rem; }
@@ -607,7 +564,6 @@ textarea { resize: vertical; min-height: 80px; }
 .ty-badge { margin-top: 1.5rem; padding: 1rem; background: var(--gold-dim); border: 1px solid var(--gold-border); }
 .ty-badge p { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold) !important; }
 
-/* ─── FAQ ─── */
 .faq-list { max-width: 720px; }
 details { border-bottom: 1px solid var(--border-strong); padding: 1.25rem 0; }
 summary {
@@ -623,7 +579,6 @@ summary::after {
 details[open] summary::after { transform: rotate(45deg); }
 details p { margin-top: 0.75rem; color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
 
-/* ─── URGENCY BAR ─── */
 .urgency-bar {
   background: var(--gold); padding: 0.85rem 3rem;
   display: flex; align-items: center; justify-content: center; gap: 2rem;
@@ -639,7 +594,6 @@ details p { margin-top: 0.75rem; color: var(--muted); font-size: 0.9rem; line-he
   font-weight: 700; text-decoration: underline;
 }
 
-/* ─── FOOTER ─── */
 footer { background: var(--ink); color: #444660; padding: 3rem; border-top: 1px solid rgba(255,255,255,0.04); }
 .footer-inner { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
 .footer-logo { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #444660; }
@@ -649,56 +603,23 @@ footer { background: var(--ink); color: #444660; padding: 3rem; border-top: 1px 
 .footer-links a:hover { color: var(--gold); }
 .footer-copy { font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; letter-spacing: 0.08em; }
 
-/* ─── ANIMATIONS ─── */
 .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 
-/* ─── CHART ─── */
-.chart-section { padding: 4rem 3rem; background: var(--ink); border-top: 1px solid rgba(255,255,255,0.04); }
-.chart-wrap { max-width: 1280px; margin: 0 auto; }
-.chart-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
-.chart-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 600; color: var(--cream); }
-.chart-legend { display: flex; gap: 1.5rem; }
-.legend-item { display: flex; align-items: center; gap: 0.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: #666888; }
-.legend-dot { width: 8px; height: 8px; border-radius: 50%; }
-.chart-container { position: relative; padding-bottom: 28px; }
-.chart-area { position: relative; height: 220px; display: flex; align-items: flex-end; gap: 4px; }
-.chart-grid { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; pointer-events: none; z-index: 0; }
-.chart-grid-line { width: 100%; height: 1px; background: rgba(255,255,255,0.04); }
-.chart-bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; position: relative; z-index: 1; }
-.chart-bar { width: 100%; border-radius: 1px 1px 0 0; transform-origin: bottom; transform: scaleY(0); transition: opacity 0.2s; cursor: pointer; }
-.chart-bar:hover { opacity: 0.8; }
-.chart-bar.actual { background: var(--gold); }
-.chart-bar.projected { background: rgba(201,168,76,0.25); border: 1px solid rgba(201,168,76,0.4); border-bottom: none; }
-.chart-bar-label { position: absolute; bottom: -24px; left: 50%; transform: translateX(-50%); font-family: 'IBM Plex Mono', monospace; font-size: 0.56rem; letter-spacing: 0.06em; color: #555770; white-space: nowrap; }
-.chart-bar-val { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; color: var(--gold); white-space: nowrap; }
-.chart-bar.projected .chart-bar-val { color: rgba(201,168,76,0.5); }
-@keyframes barGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
-
-/* ─── THESIS GRID ─── */
 .thesis-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border-strong); }
 .thesis-card { background: var(--cream); padding: 2.5rem 2rem; transition: background 0.2s; }
 .thesis-card:hover { background: var(--cream-dark); }
 .thesis-num { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 1.25rem; }
 .thesis-card h3 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 600; margin-bottom: 0.75rem; line-height: 1.2; }
 .thesis-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
-.moat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: rgba(255,255,255,0.05); }
-.moat-card { background: var(--navy); padding: 2.5rem 2rem; transition: background 0.2s; }
-.moat-card:hover { background: var(--navy-mid); }
-.moat-icon { font-size: 1.4rem; margin-bottom: 1rem; }
-.moat-card h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--cream); margin-bottom: 0.65rem; line-height: 1.2; }
-.moat-card p { font-size: 0.85rem; color: #888aaa; line-height: 1.65; }
-.moat-tag { display: inline-block; margin-top: 1rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold-border); padding: 0.25rem 0.6rem; }
 
-/* ─── RESPONSIVE ─── */
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; gap: 3rem; }
   .hero-panel { position: static; }
   .adj-layout { grid-template-columns: 1fr; gap: 3rem; }
   .market-layout { grid-template-columns: 1fr; gap: 3rem; }
   .forms-grid { grid-template-columns: 1fr; }
-  .moat-grid { grid-template-columns: 1fr; }
   .thesis-grid { grid-template-columns: 1fr; }
   .steps-row { grid-template-columns: 1fr; }
   .steps-row::before { display: none; }
@@ -710,7 +631,7 @@ footer { background: var(--ink); color: #444660; padding: 3rem; border-top: 1px 
 }
 @media (max-width: 768px) {
   .hero { padding: 8rem 1.5rem 4rem; }
-  .section-wrap, .forms-section, .chart-section, .steps-section, .adjuster-hero, .obj-section, .market-section { padding: 3.5rem 1.5rem; }
+  .section-wrap, .forms-section, .steps-section, .adjuster-hero, .obj-section, .market-section { padding: 3.5rem 1.5rem; }
   .header-top { padding: 0 1.5rem; }
   .header-meta { gap: 1rem; }
   .header-meta a:not(.header-cta) { display: none; }
@@ -718,10 +639,8 @@ footer { background: var(--ink); color: #444660; padding: 3rem; border-top: 1px 
   .form-row { grid-template-columns: 1fr; }
   .proof-bar { flex-wrap: wrap; }
   .proof-item { min-width: 50%; }
-  .chart-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .urgency-bar { flex-direction: column; gap: 0.5rem; text-align: center; }
   .urgency-divider { display: none; }
-  .audience-strip { padding: 0 1.5rem; }
   .pricing-strip { padding: 2.5rem 1.5rem; }
 }
 </style>
@@ -751,13 +670,14 @@ footer { background: var(--ink); color: #444660; padding: 3rem; border-top: 1px 
     <div class="ticker-label">Carrier Network</div>
     <div class="ticker-scroll">
       <div class="ticker-track" id="tickerTrack"></div>
+    </div>
+  </div>
 </header>
 
 <!-- ─── HERO ─── -->
 <section class="hero" style="padding-top: 11rem;">
   <div class="hero-left" style="animation: fadeUp 0.8s ease both;">
 
-    <!-- AUDIENCE TOGGLE -->
     <div style="display:flex; gap:0; margin-bottom:2.5rem; border:1px solid var(--border-strong); width: fit-content;">
       <button class="audience-toggle-btn active" id="btnShop" onclick="setAudience('shop')" style="padding:0.6rem 1.5rem; font-family:'IBM Plex Mono',monospace; font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase; background:var(--ink); color:var(--cream); border:none; cursor:pointer; transition:all 0.2s;">
         For Body Shops
@@ -780,7 +700,6 @@ footer { background: var(--ink); color: #444660; padding: 3rem; border-top: 1px 
 Our licensed adjusters deliver carrier-precise estimates before the insurance adjuster walks in — fully documented, fully substantiated — so your shop collects every dollar the repair is worth. Every time.
     </p>
 
-    <!-- Proof bar -->
     <div class="proof-bar">
       <div class="proof-item">
         <div class="proof-val">4<em>hr</em></div>
@@ -1058,35 +977,7 @@ Our licensed adjusters deliver carrier-precise estimates before the insurance ad
   </div>
 </div>
 
-<!-- ─── GROWTH CHART ─── -->
-<div class="chart-section fade-in">
-  <div class="chart-wrap">
-    <div class="chart-header">
-      <div>
-        <div style="color:var(--gold);font-family:'IBM Plex Mono',monospace;font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.75rem;">
-          <span style="display:inline-block;width:24px;height:1px;background:var(--gold);"></span> Platform Traction
-        </div>
-        <div class="chart-title">Claims Volume by Quarter</div>
-      </div>
-      <div class="chart-legend">
-        <div class="legend-item"><div class="legend-dot" style="background:var(--gold);"></div>Actual</div>
-        <div class="legend-item"><div class="legend-dot" style="background:rgba(201,168,76,0.3);border:1px solid rgba(201,168,76,0.5);"></div>Projected</div>
-      </div>
-    </div>
-    <div class="chart-container">
-      <div id="chartArea" class="chart-area">
-        <div class="chart-grid">
-          <div class="chart-grid-line"></div>
-          <div class="chart-grid-line"></div>
-          <div class="chart-grid-line"></div>
-          <div class="chart-grid-line"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ─── MARKET (INVESTOR / PLATFORM) ─── -->
+<!-- ─── MARKET ─── -->
 <div class="market-section fade-in" id="market">
   <div class="market-inner">
     <div class="market-header">
@@ -1137,19 +1028,11 @@ Our licensed adjusters deliver carrier-precise estimates before the insurance ad
         <p>Estimates are written in CCC — the industry standard — and delivered as a professional PDF, ready to present the moment the insurance adjuster arrives. No new software, no workflow changes, no onboarding headaches. We work around you, not the other way around.</p>
       </div>
       <div class="thesis-card">
-        <div class="thesis-num">03 —  A Growing Network</div>
+        <div class="thesis-num">03 — A Growing Network</div>
         <h3>Licensed Adjusters. Consistent Standards</h3>
-        <p>operates in a fragmented industry where most adjusters work alone with no support. We're building the platform that connects them to steady shop work — and connecting shops to licensed professionals they can trust, every time.</p>
+        <p>We operate in a fragmented industry where most adjusters work alone with no support. We're building the platform that connects them to steady shop work — and connecting shops to licensed professionals they can trust, every time.</p>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- ─── MOAT ─── -->
-<div class="section-wrap navy fade-in">
-  <div class="section-inner">
-    <div style="text-align:center;max-width:680px;margin:0 auto 3rem;">
-     
   </div>
 </div>
 
@@ -1168,7 +1051,7 @@ Our licensed adjusters deliver carrier-precise estimates before the insurance ad
         <div class="form-card-tag">For Body Shops</div>
         <div class="offer-pill">Early Access — <span>25% Off First 3 Estimates</span></div>
         <h3>Sign Up Your Shop</h3>
-        <p>Fast Onbarding, No Contracts. A Team Member Will Contact You within Minutes.</p>
+        <p>Fast Onboarding, No Contracts. A Team Member Will Contact You within Minutes.</p>
         <div class="form-row">
           <div class="field"><label for="shopName">Shop Name</label><input type="text" id="shopName" placeholder="Johnson's Auto Body" /></div>
           <div class="field"><label for="phone">Phone Number</label><input type="tel" id="phone" placeholder="(555) 000-0000" /></div>
@@ -1201,7 +1084,7 @@ Our licensed adjusters deliver carrier-precise estimates before the insurance ad
       </div>
 
       <!-- ADJUSTER FORM -->
-      <div id="adjFormView" class="form-card" id="adjuster-section">
+      <div id="adjFormView" class="form-card">
         <div class="form-card-tag">For Adjusters</div>
         <h3>Join the Adjuster Network</h3>
         <p>Every submission reviewed by a human — no automated rejections.</p>
@@ -1291,7 +1174,7 @@ Our licensed adjusters deliver carrier-precise estimates before the insurance ad
 (function() {
   const carriers = ['State Farm','GEICO','Allstate','Progressive','USAA','Farmers','Liberty Mutual','Nationwide','Travelers','AAA','Safeco','Erie Insurance','MetLife Auto','American Family','Kemper','Hanover','Hartford','Amica','Auto-Owners','Mercury Insurance','Bristol West','Dairyland','Infinity Auto','National General','Root Insurance','Clearcover','Lemonade','Branch Insurance','Kin Insurance','CSAA','Toggle','Hippo'];
   const track = document.getElementById('tickerTrack');
-  const html = carriers.map((c, i) => `<span class="ticker-item active"><span class="dot"></span>${c}</span>`).join('');
+  const html = carriers.map((c) => `<span class="ticker-item active"><span class="dot"></span>${c}</span>`).join('');
   track.innerHTML = html + html;
 })();
 
@@ -1301,6 +1184,7 @@ const content = {
     eyebrow: 'Auto Claims Infrastructure · Est. 2024',
     headline: 'Stop Chasing<br>Adjusters.<br><em>They Come to You.</em>',
     sub: 'Extra Mile gets a certified adjuster to your shop — confirmed in under 2 hours — so your vehicles keep moving and your cycle times stay competitive. No cold calls, no waiting, no follow-up.',
+    cta: 'Sign Up Your Shop — Free',
     ghost: 'See How It Works ↓',
     panelTag: 'Why Shops Switch to Extra Mile',
     panelItems: [
@@ -1334,22 +1218,18 @@ function setAudience(type) {
   if (type === currentAudience) return;
   currentAudience = type;
 
-  // Toggle button styles
   document.getElementById('btnShop').style.background = type === 'shop' ? 'var(--ink)' : 'transparent';
   document.getElementById('btnShop').style.color = type === 'shop' ? 'var(--cream)' : 'var(--muted)';
   document.getElementById('btnAdj').style.background = type === 'adjuster' ? 'var(--ink)' : 'transparent';
   document.getElementById('btnAdj').style.color = type === 'adjuster' ? 'var(--cream)' : 'var(--muted)';
 
   const c = content[type];
-
-  // Fade out
   const headline = document.querySelector('.hl-inner');
   const sub = document.getElementById('heroSub');
   headline.classList.add('fading');
   sub.classList.add('fading');
 
   setTimeout(() => {
-    // Update content
     document.getElementById('heroEyebrow').textContent = c.eyebrow;
     headline.innerHTML = c.headline;
     sub.textContent = c.sub;
@@ -1360,13 +1240,11 @@ function setAudience(type) {
     document.getElementById('panelTag').textContent = c.panelTag;
     document.getElementById('panelCTA').textContent = c.panelCTA;
 
-    // Update pain list
     const list = document.getElementById('painList');
     list.innerHTML = c.panelItems.map(item =>
       `<li><span class="pain-icon">${item.icon}</span><div><strong>${item.strong}</strong>${item.text}</div></li>`
     ).join('');
 
-    // Update CTA button style
     const ctaBtn = document.getElementById('heroCTA');
     if (type === 'adjuster') {
       ctaBtn.style.background = 'var(--gold)';
@@ -1376,59 +1254,10 @@ function setAudience(type) {
       ctaBtn.style.color = '';
     }
 
-    // Fade back in
     headline.classList.remove('fading');
     sub.classList.remove('fading');
   }, 250);
 }
-
-// ─── CHART ───
-(function() {
-  const chartData = [
-    { label: "Q1 '25", val: 38,  type: 'actual' },
-    { label: "Q2 '25", val: 72,  type: 'actual' },
-    { label: "Q3 '25", val: 118, type: 'actual' },
-    { label: "Q4 '25", val: 165, type: 'actual' },
-    { label: "Q1 '26", val: 230, type: 'actual' },
-    { label: "Q2 '26", val: 320, type: 'projected' },
-    { label: "Q3 '26", val: 430, type: 'projected' },
-    { label: "Q4 '26", val: 570, type: 'projected' },
-  ];
-  const maxVal = Math.max(...chartData.map(d => d.val));
-  const area = document.getElementById('chartArea');
-  chartData.forEach((d, i) => {
-    const group = document.createElement('div');
-    group.className = 'chart-bar-group';
-    group.style.position = 'relative';
-    const bar = document.createElement('div');
-    bar.className = `chart-bar ${d.type}`;
-    bar.style.height = `${(d.val / maxVal) * 100}%`;
-    bar.dataset.delay = String(i * 0.08);
-    const valLabel = document.createElement('div');
-    valLabel.className = 'chart-bar-val';
-    valLabel.textContent = String(d.val);
-    bar.appendChild(valLabel);
-    const label = document.createElement('div');
-    label.className = 'chart-bar-label';
-    label.textContent = d.label;
-    group.appendChild(bar);
-    group.appendChild(label);
-    area.appendChild(group);
-  });
-  const chartSection = document.querySelector('.chart-section');
-  let animated = false;
-  new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting && !animated) {
-        animated = true;
-        document.querySelectorAll('.chart-bar').forEach(bar => {
-          const delay = parseFloat(bar.dataset.delay || '0');
-          bar.style.animation = `barGrow 1.0s cubic-bezier(0.22,1,0.36,1) ${delay}s both`;
-        });
-      }
-    });
-  }, { threshold: 0.15 }).observe(chartSection);
-})();
 
 // ─── FADE-IN ───
 const fadeObserver = new IntersectionObserver(entries => {
